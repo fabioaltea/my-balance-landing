@@ -1,0 +1,5 @@
+{
+  "name": "MyBalance",
+  "description": "A privacy-first personal finance tracker connecting directly to Google Sheets.",
+  "requestFramePermissions": []
+}
