@@ -14,6 +14,7 @@ export const en = {
     downloadIOS: 'Download for iOS',
     comingSoon: 'Coming Soon',
     viewSource: 'View Source Code',
+    getStarted: 'Get Started',
   },
 
   // Features
@@ -59,6 +60,23 @@ export const en = {
         multiAccount: 'Multi-account movements',
         categories: 'Flexible categorization',
         location: 'Optional location tagging',
+      },
+    },
+    comingSoonSection: {
+      title: 'Coming Soon',
+      subtitle: 'We\'re putting the finishing touches on MyBalance. Be among the first to take control of your finances.',
+      description: 'The app is almost ready. Sign up to be notified when we launch.',
+      buttons: {
+        ios: 'Download for iOS',
+        android: 'Download for Android',
+        web: 'Access Online',
+      },
+      form: {
+        placeholder: 'Enter your email',
+        submit: 'Notify Me',
+        success: 'You\'re on the list! We\'ll notify you when we launch.',
+        error: 'Something went wrong. Please try again.',
+        invalid: 'Please enter a valid email address.',
       },
     },
   },

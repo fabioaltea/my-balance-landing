@@ -1,15 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import Hero from "../components/Hero";
 import FeatureCard from "../components/FeatureCard";
-import { Layers, Shield, Zap } from "lucide-react";
+import { Layers, Shield, Zap, Apple, Smartphone, Globe, Send, Check, AlertCircle } from "lucide-react";
 import appScreenshot from "../assets/IMG_2051.PNG";
 import chartsScreenshot1 from "../assets/IMG_2052.PNG";
 import chartsScreenshot2 from "../assets/IMG_2053.PNG";
 import movementScreenshot from "../assets/IMG_2054.PNG";
 import { useLocale } from "../hooks/useLocale";
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+
 const Home: React.FC = () => {
   const { t } = useLocale();
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleWaitlistSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setStatus('error');
+      setErrorMessage(t.home.comingSoonSection.form.invalid);
+      return;
+    }
+
+    setStatus('loading');
+    try {
+      const response = await fetch(`${API_URL}/waitlist`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setEmail('');
+      } else {
+        setStatus('error');
+        setErrorMessage(t.home.comingSoonSection.form.error);
+      }
+    } catch {
+      setStatus('error');
+      setErrorMessage(t.home.comingSoonSection.form.error);
+    }
+  };
   return (
     <div className="pb-20">
       <Hero />
@@ -294,6 +330,115 @@ const Home: React.FC = () => {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Coming Soon Section */}
+      <section id="coming-soon" className="mt-48 px-4 max-w-4xl mx-auto text-center">
+        <div className="rounded-[2.5rem] p-10 md:p-16 bg-gradient-to-br from-[#2f4f3f] to-[#1a3025] shadow-2xl shadow-[#2f4f3f]/30 border border-white/10">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            {t.home.comingSoonSection.title}
+          </h2>
+          <p className="text-white/80 text-lg md:text-xl mb-4 max-w-2xl mx-auto">
+            {t.home.comingSoonSection.subtitle}
+          </p>
+          <p className="text-white/60 text-base mb-8">
+            {t.home.comingSoonSection.description}
+          </p>
+
+          {/* Email Form */}
+          <form onSubmit={handleWaitlistSubmit} className="max-w-md mx-auto mb-10">
+            {status === 'success' ? (
+              <div className="flex items-center justify-center gap-2 p-4 rounded-full bg-green-500/20 text-green-300 border border-green-500/30">
+                <Check size={20} />
+                <span>{t.home.comingSoonSection.form.success}</span>
+              </div>
+            ) : (
+              <>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                      setEmail(e.target.value);
+                      if (status === 'error') setStatus('idle');
+                    }}
+                    placeholder={t.home.comingSoonSection.form.placeholder}
+                    className="
+                      flex-1 px-6 py-4 rounded-full
+                      bg-white/10 text-white placeholder-white/50
+                      border border-white/20 focus:border-white/40
+                      outline-none transition-all duration-300
+                    "
+                  />
+                  <button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    className="
+                      flex items-center justify-center gap-2 px-8 py-4 rounded-full
+                      bg-white text-[#2f4f3f] font-semibold
+                      hover:bg-white/90 active:scale-95
+                      transition-all duration-300
+                      disabled:opacity-50 disabled:cursor-not-allowed
+                    "
+                  >
+                    {status === 'loading' ? (
+                      <span className="animate-pulse">...</span>
+                    ) : (
+                      <>
+                        <Send size={18} />
+                        {t.home.comingSoonSection.form.submit}
+                      </>
+                    )}
+                  </button>
+                </div>
+                {status === 'error' && (
+                  <div className="flex items-center justify-center gap-2 mt-3 text-red-300 text-sm">
+                    <AlertCircle size={16} />
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
+              </>
+            )}
+          </form>
+
+          {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              disabled
+              className="
+                flex items-center justify-center gap-2 px-6 py-4 rounded-full w-full sm:w-auto
+                bg-white/10 text-white/50 font-semibold
+                border border-white/20 cursor-not-allowed
+              "
+            >
+              <Apple size={20} />
+              {t.home.comingSoonSection.buttons.ios}
+            </button>
+
+            <button
+              disabled
+              className="
+                flex items-center justify-center gap-2 px-6 py-4 rounded-full w-full sm:w-auto
+                bg-white/10 text-white/50 font-semibold
+                border border-white/20 cursor-not-allowed
+              "
+            >
+              <Smartphone size={20} />
+              {t.home.comingSoonSection.buttons.android}
+            </button>
+
+            <button
+              disabled
+              className="
+                flex items-center justify-center gap-2 px-6 py-4 rounded-full w-full sm:w-auto
+                bg-white/10 text-white/50 font-semibold
+                border border-white/20 cursor-not-allowed
+              "
+            >
+              <Globe size={20} />
+              {t.home.comingSoonSection.buttons.web}
+            </button>
+          </div> */}
         </div>
       </section>
     </div>

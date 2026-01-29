@@ -16,6 +16,7 @@ export const it: Translations = {
     downloadIOS: 'Scarica per iOS',
     comingSoon: 'Prossimamente',
     viewSource: 'Visualizza Codice Sorgente',
+    getStarted: 'Inizia',
   },
 
   // Features
@@ -61,6 +62,23 @@ export const it: Translations = {
         multiAccount: 'Movimenti multi-account',
         categories: 'Categorizzazione flessibile',
         location: 'Tag di posizione opzionale',
+      },
+    },
+    comingSoonSection: {
+      title: 'Prossimamente',
+      subtitle: 'Stiamo dando gli ultimi ritocchi a MyBalance. Sii tra i primi a prendere il controllo delle tue finanze.',
+      description: 'L\'app è quasi pronta. Iscriviti per essere avvisato al lancio.',
+      buttons: {
+        ios: 'Scarica per iOS',
+        android: 'Scarica per Android',
+        web: 'Accedi Online',
+      },
+      form: {
+        placeholder: 'Inserisci la tua email',
+        submit: 'Avvisami',
+        success: 'Sei nella lista! Ti avviseremo al lancio.',
+        error: 'Qualcosa è andato storto. Riprova.',
+        invalid: 'Inserisci un indirizzo email valido.',
       },
     },
   },

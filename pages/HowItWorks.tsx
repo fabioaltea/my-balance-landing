@@ -10,7 +10,6 @@ const HowItWorks: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { t } = useLocale();
 
-  const { t } = useLocale();
 
   const steps = [
     {

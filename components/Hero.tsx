@@ -1,12 +1,13 @@
 import React, { useLayoutEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
-import { ArrowRight, Smartphone } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import logoImage from '../assets/logo.png';
-import appScreenshot from '../assets/IMG_2051.PNG';
 import { useLocale } from '../hooks/useLocale';
 
 const Hero: React.FC = () => {
   const { t } = useLocale();
+  const navigate = useNavigate();
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
@@ -68,17 +69,23 @@ const Hero: React.FC = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-          <button className="
+          <button
+            onClick={() => {
+              document.getElementById('coming-soon')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="
             flex items-center gap-2 px-8 py-4 rounded-full
             bg-[#2f4f3f] text-white font-semibold text-lg
             hover:bg-[#3d6652] hover:scale-105 active:scale-95
             transition-all duration-300 shadow-xl shadow-[#2f4f3f]/20
           ">
-            {t.hero.downloadAndroid}
-            <Smartphone size={20} />
+            {t.hero.getStarted}
+            <ArrowRight size={20} />
           </button>
 
-          <button className="
+          <button
+            onClick={() => navigate('/how-it-works')}
+            className="
             flex items-center gap-2 px-8 py-4 rounded-full
             bg-white/50 dark:bg-black/50 backdrop-blur-md
             border border-white/20 dark:border-white/10
