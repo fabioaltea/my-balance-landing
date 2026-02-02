@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" id="theme-color" content="#f9fafb" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <title>MyBalance</title>
     <link rel="icon" type="image/png" href="/assets/logo.png" />
     <link rel="apple-touch-icon" href="/assets/logo.png" />
@@ -66,6 +68,19 @@
       }
     </script>
     <link rel="stylesheet" href="/index.css" />
+    <script>
+      // Update theme-color meta tag when dark mode changes
+      const updateThemeColor = () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        const themeColor = document.getElementById('theme-color');
+        if (themeColor) themeColor.content = isDark ? '#0a0a0a' : '#f9fafb';
+      };
+      // Observe class changes on html element
+      const observer = new MutationObserver(updateThemeColor);
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+      // Initial check
+      updateThemeColor();
+    </script>
     <!-- <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
