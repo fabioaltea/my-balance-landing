@@ -66,10 +66,10 @@ const AppContent: React.FC = () => {
             <Link to="/privacy-policy" className="hover:text-[#2f4f3f] transition-colors">
               {t.footer.privacyPolicy}
             </Link>
-            <span>·</span>
+            {/* <span>·</span>
             <Link to="/cookie-policy" className="hover:text-[#2f4f3f] transition-colors">
               {t.footer.cookiePolicy}
-            </Link>
+            </Link> */}
           </div>
         </footer>
       </div>

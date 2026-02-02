@@ -221,7 +221,7 @@ export const it: Translations = {
     cta: {
       title: 'Pronto a Prendere il Controllo?',
       description: 'Inizia a tracciare le tue finanze nel modo privacy-first. I tuoi dati appartengono a te, non a noi.',
-      button: 'Inizia Ora',
+      button: 'Dai un\'occhiata al codice sorgente',
     },
     architecture: {
       title: 'Come Funziona',

@@ -296,7 +296,7 @@ const TechStack: React.FC = () => {
           {t.techStack.cta.description}
         </p>
         <a
-          href="https://github.com/fabioaltea/mybalance"
+          href="https://github.com/fabioaltea/my-balance-landing"
           target="_blank"
           rel="noreferrer"
           className="

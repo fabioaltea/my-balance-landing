@@ -219,7 +219,7 @@ export const en = {
     cta: {
       title: 'Ready to Take Control?',
       description: 'Start tracking your finances the privacy-first way. Your data belongs to you, not to us.',
-      button: 'Get Started',
+      button: 'Take a Look at the Source Code',
     },
     architecture: {
       title: 'How It All Connects',
