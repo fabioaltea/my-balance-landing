@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 pt-24">
+    <section ref={heroRef} className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 ">
       
       {/* Name and Logo Block */}
       <div ref={titleRef} className="flex flex-col items-center justify-center mb-10">
