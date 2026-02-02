@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import FeatureCard from "../components/FeatureCard";
-import { Layers, Shield, Zap, Apple, Smartphone, Globe, Send, Check, AlertCircle } from "lucide-react";
+import { Layers, Shield, Zap, Apple, Smartphone, Globe, Send, Check, AlertCircle, BarChart3, Table2, Lock, Settings2, Lightbulb, X } from "lucide-react";
 import appScreenshot from "../assets/IMG_2051.PNG";
 import chartsScreenshot1 from "../assets/IMG_2052.PNG";
 import chartsScreenshot2 from "../assets/IMG_2053.PNG";
@@ -300,32 +301,29 @@ const Home: React.FC = () => {
 
               <div className="bg-white/10 rounded-2xl p-5 mb-6">
                 <p className="text-white/90 font-medium mb-3">
-                  Example: Pizza night with friends
+                  {t.home.transactionsSection.example.title}
                 </p>
                 <p className="text-white/70 text-sm leading-relaxed">
-                  You pay €48 in cash for everyone at the pizzeria. Your friends
-                  pay you back: €25 via bank transfer to Intesa San Paolo, €10
-                  to Trade Republic. Total expense for you? Just €13. One
-                  movement captures it all.
+                  {t.home.transactionsSection.example.description}
                 </p>
               </div>
 
               <ul className="space-y-3 text-white/80">
                 <li className="flex items-center gap-3 justify-center md:justify-start">
                   <span className="w-2 h-2 rounded-full bg-red-400"></span>
-                  Cash: -€48,00 (you paid the bill)
+                  {t.home.transactionsSection.example.cash}
                 </li>
                 <li className="flex items-center gap-3 justify-center md:justify-start">
                   <span className="w-2 h-2 rounded-full bg-green-400"></span>
-                  Intesa San Paolo: +€25,00 (friend 1 paid back)
+                  {t.home.transactionsSection.example.intesa}
                 </li>
                 <li className="flex items-center gap-3 justify-center md:justify-start">
                   <span className="w-2 h-2 rounded-full bg-green-400"></span>
-                  Trade Republic: +€10,00 (friend 2 paid back)
+                  {t.home.transactionsSection.example.trade}
                 </li>
                 <li className="flex items-center gap-3 justify-center md:justify-start">
                   <span className="w-2 h-2 rounded-full bg-yellow-400"></span>
-                  Net expense: -€13,00 (your share)
+                  {t.home.transactionsSection.example.net}
                 </li>
               </ul>
             </div>
@@ -333,8 +331,127 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Why MyBalance Section */}
+      <section className="mt-32 px-4 max-w-6xl mx-auto">
+        {/* Section Title */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2f4f3f]">
+            {t.home.whySection.title}
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Left: Intro + Origin */}
+          <div className="space-y-8">
+            {/* Intro Card */}
+            {/* <div className="rounded-[2.5rem] p-8 bg-gradient-to-br from-[#2f4f3f] to-[#1a3025] text-white">
+              <h3 className="text-xl md:text-2xl font-semibold mb-4">
+                {t.home.whySection.intro.title}
+              </h3>
+              <p className="text-lg leading-relaxed text-white/90">
+                {t.home.whySection.intro.description}
+              </p>
+            </div> */}
+
+            {/* Origin Card */}
+            <div className="rounded-[2.5rem] p-8 bg-white border border-gray-200 shadow-lg">
+              <div className="flex items-center gap-3 mb-6 space-between">
+                <h3 className="text-xl font-semibold text-[#2f4f3f]">
+                  {t.home.whySection.origin.title}
+                </h3>
+                <div className="w-10 h-10 rounded-full bg-[#2f4f3f]/10 flex items-center justify-center">
+                  <Lightbulb className="w-5 h-5 text-[#2f4f3f]" />
+                </div>
+              </div>
+              <p className="text-gray-600 leading-relaxed mb-4 whitespace-pre-line">
+                {t.home.whySection.origin.intro}
+              </p>
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+                    <X className="w-3 h-3 text-red-500" />
+                  </div>
+                  <span className="text-gray-700">
+                    {t.home.whySection.origin.items.proprietary}
+                  </span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+                    <X className="w-3 h-3 text-red-500" />
+                  </div>
+                  <span className="text-gray-700">
+                    {t.home.whySection.origin.items.superficial}
+                  </span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+                    <X className="w-3 h-3 text-red-500" />
+                  </div>
+                  <span className="text-gray-700">
+                    {t.home.whySection.origin.items.subscriptions}
+                  </span>
+                </li>
+              </ul>
+              <p className="text-gray-700 leading-relaxed font-medium whitespace-pre-line">
+                {t.home.whySection.origin.conclusion}
+              </p>
+            </div>
+          </div>
+
+          {/* Right: For Who */}
+          <div className="rounded-[2.5rem] p-8 bg-gradient-to-br from-[#2f4f3f] to-[#1a3025] text-white">
+            <h3 className="text-xl font-semibold mb-2">
+              {t.home.whySection.forWho.subtitle}
+            </h3>
+            {/* <p className="text-white/70 mb-6">
+              {t.home.whySection.forWho.subtitle}
+            </p> */}
+            <ul className="space-y-4 mt-6 mb-6">
+              <li className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                  <BarChart3 className="w-5 h-5 text-green-400" />
+                </div>
+                <p className="text-white/90 pt-2">
+                  {t.home.whySection.forWho.items.dataLovers}
+                </p>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                  <Table2 className="w-5 h-5 text-blue-400" />
+                </div>
+                <p className="text-white/90 pt-2">
+                  {t.home.whySection.forWho.items.spreadsheetUsers}
+                </p>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                  <Lock className="w-5 h-5 text-purple-400" />
+                </div>
+                <p className="text-white/90 pt-2">
+                  {t.home.whySection.forWho.items.privacyConscious}
+                </p>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                  <Settings2 className="w-5 h-5 text-orange-400" />
+                </div>
+                <p className="text-white/90 pt-2">
+                  {t.home.whySection.forWho.items.controlFreaks}
+                </p>
+              </li>
+            </ul>
+            {/* <p className="text-white/80 text-sm italic border-t border-white/20 pt-4">
+              {t.home.whySection.forWho.conclusion}
+            </p> */}
+          </div>
+        </div>
+      </section>
+
       {/* Coming Soon Section */}
-      <section id="coming-soon" className="mt-48 px-4 max-w-4xl mx-auto text-center">
+      <section
+        id="coming-soon"
+        className="mt-48 px-4 max-w-6xl mx-auto text-center"
+      >
         <div className="rounded-[2.5rem] p-10 md:p-16 bg-gradient-to-br from-[#2f4f3f] to-[#1a3025] shadow-2xl shadow-[#2f4f3f]/30 border border-white/10">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             {t.home.comingSoonSection.title}
@@ -347,8 +464,11 @@ const Home: React.FC = () => {
           </p>
 
           {/* Email Form */}
-          <form onSubmit={handleWaitlistSubmit} className="max-w-md mx-auto mb-10">
-            {status === 'success' ? (
+          <form
+            onSubmit={handleWaitlistSubmit}
+            className="max-w-md mx-auto mb-10"
+          >
+            {status === "success" ? (
               <div className="flex items-center justify-center gap-2 p-4 rounded-full bg-green-500/20 text-green-300 border border-green-500/30">
                 <Check size={20} />
                 <span>{t.home.comingSoonSection.form.success}</span>
@@ -361,7 +481,7 @@ const Home: React.FC = () => {
                     value={email}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                       setEmail(e.target.value);
-                      if (status === 'error') setStatus('idle');
+                      if (status === "error") setStatus("idle");
                     }}
                     placeholder={t.home.comingSoonSection.form.placeholder}
                     className="
@@ -373,7 +493,7 @@ const Home: React.FC = () => {
                   />
                   <button
                     type="submit"
-                    disabled={status === 'loading'}
+                    disabled={status === "loading"}
                     className="
                       flex items-center justify-center gap-2 px-8 py-4 rounded-full
                       bg-white text-[#2f4f3f] font-semibold
@@ -382,7 +502,7 @@ const Home: React.FC = () => {
                       disabled:opacity-50 disabled:cursor-not-allowed
                     "
                   >
-                    {status === 'loading' ? (
+                    {status === "loading" ? (
                       <span className="animate-pulse">...</span>
                     ) : (
                       <>
@@ -392,7 +512,7 @@ const Home: React.FC = () => {
                     )}
                   </button>
                 </div>
-                {status === 'error' && (
+                {status === "error" && (
                   <div className="flex items-center justify-center gap-2 mt-3 text-red-300 text-sm">
                     <AlertCircle size={16} />
                     <span>{errorMessage}</span>
@@ -401,6 +521,13 @@ const Home: React.FC = () => {
               </>
             )}
           </form>
+
+          <p className="text-white/50 text-xs mt-4">
+            {t.home.comingSoonSection.form.disclaimer}{' '}
+            <Link to="/privacy-policy" className="underline hover:text-white/70 transition-colors">
+              {t.home.comingSoonSection.form.privacyPolicy}
+            </Link>
+          </p>
 
           {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button

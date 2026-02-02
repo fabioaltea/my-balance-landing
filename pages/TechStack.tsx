@@ -195,7 +195,7 @@ const TechStack: React.FC = () => {
       {/* Architecture Diagram */}
       <div className="mt-16 p-8 rounded-[2.5rem] bg-gradient-to-br from-[#2f4f3f]/10 to-[#2f4f3f]/5 dark:from-white/10 dark:to-white/5 backdrop-blur-lg border border-[#2f4f3f]/20 dark:border-white/10">
         <h2 className="text-2xl font-bold text-[#2f4f3f] dark:text-white mb-6 text-center">
-          How It All Connects
+          {t.techStack.architecture.title}
         </h2>
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-center">
           <div className="flex flex-col items-center gap-2">
@@ -206,10 +206,10 @@ const TechStack: React.FC = () => {
               />
             </div>
             <span className="font-semibold text-gray-800 dark:text-white">
-              Mobile App
+              {t.techStack.architecture.mobileApp}
             </span>
             <span className="text-sm text-gray-500 dark:text-gray-400">
-              React Native
+              {t.techStack.architecture.reactNative}
             </span>
           </div>
 
@@ -225,10 +225,10 @@ const TechStack: React.FC = () => {
               />
             </div>
             <span className="font-semibold text-gray-800 dark:text-white">
-              Backend API
+              {t.techStack.architecture.backendApi}
             </span>
             <span className="text-sm text-gray-500 dark:text-gray-400">
-              Express + Vercel
+              {t.techStack.architecture.expressVercel}
             </span>
           </div>
 
@@ -244,18 +244,16 @@ const TechStack: React.FC = () => {
               />
             </div>
             <span className="font-semibold text-gray-800 dark:text-white">
-              Your Data
+              {t.techStack.architecture.yourData}
             </span>
             <span className="text-sm text-gray-500 dark:text-gray-400">
-              Google Sheets
+              {t.techStack.architecture.googleSheets}
             </span>
           </div>
         </div>
 
         <p className="text-center text-gray-600 dark:text-gray-300 mt-8 max-w-2xl mx-auto">
-          The app communicates with our backend, which securely accesses your
-          Google Sheet using encrypted tokens. Your financial data never touches
-          our servers - it goes directly to your personal Google Drive.
+          {t.techStack.architecture.description}
         </p>
       </div>
 
@@ -264,28 +262,28 @@ const TechStack: React.FC = () => {
         <div className="p-8 rounded-[2.5rem] bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800/30">
           <h3 className="font-bold text-red-800 dark:text-red-300 mb-4 flex items-center gap-2">
             <Key size={20} />
-            What We Store (PostgreSQL)
+            {t.techStack.whatWeStore.title}
           </h3>
           <ul className="space-y-2 text-red-700 dark:text-red-300 text-sm">
-            <li>• Your email and profile info</li>
-            <li>• Reference to your spreadsheet ID</li>
-            <li>• Encrypted Google access tokens</li>
-            <li>• Session data for multi-device</li>
-            <li>• Push notification tokens</li>
+            <li>• {t.techStack.whatWeStore.items.email}</li>
+            <li>• {t.techStack.whatWeStore.items.spreadsheetId}</li>
+            <li>• {t.techStack.whatWeStore.items.tokens}</li>
+            <li>• {t.techStack.whatWeStore.items.session}</li>
+            <li>• {t.techStack.whatWeStore.items.pushTokens}</li>
           </ul>
         </div>
 
         <div className="p-8 rounded-[2.5rem] bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/30">
           <h3 className="font-bold text-green-800 dark:text-green-300 mb-4 flex items-center gap-2">
             <Shield size={20} />
-            What You Own (Google Sheets)
+            {t.techStack.whatYouOwn.title}
           </h3>
           <ul className="space-y-2 text-green-700 dark:text-green-300 text-sm">
-            <li>• All your transactions</li>
-            <li>• All your accounts</li>
-            <li>• All your categories</li>
-            <li>• Complete financial history</li>
-            <li>• Full export anytime</li>
+            <li>• {t.techStack.whatYouOwn.items.transactions}</li>
+            <li>• {t.techStack.whatYouOwn.items.accounts}</li>
+            <li>• {t.techStack.whatYouOwn.items.categories}</li>
+            <li>• {t.techStack.whatYouOwn.items.history}</li>
+            <li>• {t.techStack.whatYouOwn.items.export}</li>
           </ul>
         </div>
       </div>

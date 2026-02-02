@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation, Link } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import LiquidBackground from "./components/LiquidBackground";
 import Home from "./pages/Home";
 import HowItWorks from "./pages/HowItWorks";
 import TechStack from "./pages/TechStack";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookiePolicy from "./pages/CookiePolicy";
 import { LocaleProvider, useLocale } from "./hooks/useLocale";
 
 const ScrollToTop = () => {
@@ -51,13 +53,24 @@ const AppContent: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/tech-stack" element={<TechStack />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
           </Routes>
         </main>
 
         <footer className="py-8 mb-20 md:mb-0 text-center text-sm text-gray-500 dark:text-gray-400">
-          <p>
+          <p className="mb-3">
             &copy; {new Date().getFullYear()} {t.footer.copyright}
           </p>
+          <div className="flex justify-center gap-4">
+            <Link to="/privacy-policy" className="hover:text-[#2f4f3f] transition-colors">
+              {t.footer.privacyPolicy}
+            </Link>
+            <span>·</span>
+            <Link to="/cookie-policy" className="hover:text-[#2f4f3f] transition-colors">
+              {t.footer.cookiePolicy}
+            </Link>
+          </div>
         </footer>
       </div>
     </HashRouter>
