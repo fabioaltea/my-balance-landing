@@ -1,4 +1,4 @@
-<div align="center">
+<div >
 
 
 # MyBalance
@@ -8,11 +8,11 @@
 A modern personal finance tracker that stores all your data in your own Google Sheet.
 Privacy-first, open source, and beautifully simple.
 
-[View Landing Page](https://fabioaltea.github.io/my-balance-landing) · [Report Bug](https://github.com/fabioaltea/my-balance-landing/issues)
+[View Landing Page](https://www.mybalance.tech/) · [Report Bug](https://github.com/fabioaltea/my-balance-landing/issues)
 
 </div>
 
----
+
 
 ## Why MyBalance?
 
@@ -199,7 +199,7 @@ Made with ❤️ by Fabio Altea
 ---
 
 <sub>
-<b>Disclaimer:</b> This landing page was originally scaffolded with Google AI Studio.
+This landing page was originally scaffolded with Google AI Studio.
 </sub>
 
 </div>
