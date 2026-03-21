@@ -206,6 +206,46 @@ const PrivacyPolicy: React.FC = () => {
           <p className="whitespace-pre-line">{s.definitions.items.legalReferences.text}</p>
         </section>
 
+        {/* Google API Services User Data Policy */}
+        <section className="bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 rounded-2xl p-6 mt-8">
+          <h2 className="text-2xl font-semibold text-[#2f4f3f] dark:text-white mb-4">{s.googleApi.title}</h2>
+          <p className="mb-6 whitespace-pre-line">{s.googleApi.intro}</p>
+
+          <h3 className="text-xl font-semibold text-[#2f4f3f] dark:text-white mt-4 mb-3">{s.googleApi.dataAccessed.title}</h3>
+          <p className="mb-4">{s.googleApi.dataAccessed.intro}</p>
+          <div className="space-y-4 mb-6">
+            {s.googleApi.dataAccessed.items.map((item, i) => (
+              <div key={i} className="bg-white dark:bg-gray-800 rounded-xl p-4">
+                <p className="font-mono text-sm font-semibold text-emerald-700 dark:text-emerald-400 mb-1">{item.scope}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{item.purpose}</p>
+              </div>
+            ))}
+          </div>
+
+          <h3 className="text-xl font-semibold text-[#2f4f3f] dark:text-white mt-6 mb-3">{s.googleApi.limitedUse.title}</h3>
+          <p className="mb-3">{s.googleApi.limitedUse.intro}</p>
+          <ul className="list-disc pl-6 mb-4 space-y-1">
+            {s.googleApi.limitedUse.items.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+          <p className="font-semibold mt-4 mb-2">{s.googleApi.limitedUse.prohibitions.title}</p>
+          <ul className="list-disc pl-6 space-y-1">
+            {s.googleApi.limitedUse.prohibitions.items.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+
+          <h3 className="text-xl font-semibold text-[#2f4f3f] dark:text-white mt-6 mb-3">{s.googleApi.dataStorage.title}</h3>
+          <p className="whitespace-pre-line">{s.googleApi.dataStorage.text}</p>
+
+          <h3 className="text-xl font-semibold text-[#2f4f3f] dark:text-white mt-6 mb-3">{s.googleApi.revocation.title}</h3>
+          <p className="whitespace-pre-line">{s.googleApi.revocation.text}</p>
+
+          <h3 className="text-xl font-semibold text-[#2f4f3f] dark:text-white mt-6 mb-3">{s.googleApi.compliance.title}</h3>
+          <p className="whitespace-pre-line">{s.googleApi.compliance.text}</p>
+        </section>
+
       </div>
     </div>
   );

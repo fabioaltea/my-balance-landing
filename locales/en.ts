@@ -258,6 +258,7 @@ export const en = {
     copyright: 'MyBalance. Made with <3 by Fabio Altea.',
     privacyPolicy: 'Privacy Policy',
     cookiePolicy: 'Cookie Policy',
+    termsOfService: 'Terms of Service',
   },
 
   // Legal
@@ -408,6 +409,56 @@ export const en = {
             text2: 'If the changes affect processing whose legal basis is consent, the Data Controller will obtain the User\'s consent again, if necessary.',
           },
         },
+        googleApi: {
+          title: 'Google API Services — User Data Policy',
+          intro: 'MyBalance\'s use and transfer of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements. This section describes precisely how we access, use, store, and protect data obtained through Google OAuth.',
+          dataAccessed: {
+            title: 'Google Data We Access',
+            intro: 'When you sign in with Google, MyBalance requests the following OAuth permissions:',
+            items: [
+              {
+                scope: 'openid / profile / email',
+                purpose: 'Used solely to identify you, create or retrieve your account, and display your name and profile picture within the app. We do not use this information for any other purpose.',
+              },
+              {
+                scope: 'https://www.googleapis.com/auth/spreadsheets',
+                purpose: 'Used exclusively to create, read, and update a single dedicated Google Spreadsheet in your own Google Drive, where all your personal financial data is stored. MyBalance never accesses any other spreadsheets or files in your Drive beyond the one it creates for you.',
+              },
+            ],
+          },
+          limitedUse: {
+            title: 'Limited Use of Google User Data',
+            intro: 'Data obtained from Google APIs is used strictly and solely for the following purposes:',
+            items: [
+              'Authenticating your identity to provide secure access to the application.',
+              'Creating and managing a dedicated spreadsheet in your Google Drive to store your personal financial data (transactions, accounts, categories).',
+              'Reading and writing your financial data to and from that spreadsheet on your behalf.',
+              'Displaying your name and profile picture within the application interface.',
+            ],
+            prohibitions: {
+              title: 'We explicitly do NOT:',
+              items: [
+                'Share, sell, rent, or transfer your Google user data to any third parties.',
+                'Use your Google Sheets data for advertising, profiling, or marketing purposes.',
+                'Allow any human to read your Google Sheets data, except where strictly required for security incident response or legal compliance.',
+                'Access any Google Sheets, Drive files, or data beyond the single dedicated MyBalance spreadsheet.',
+                'Use Google user data for any purpose not described in this Privacy Policy.',
+              ],
+            },
+          },
+          dataStorage: {
+            title: 'Storage of Google Credentials',
+            text: 'To enable seamless access to your Google Sheets without requiring re-authentication at every session, MyBalance securely stores your Google OAuth refresh token in an AES-encrypted format in our PostgreSQL database hosted on Vercel (United States). The refresh token is used exclusively to obtain short-lived access tokens to interact with your spreadsheet on your behalf. It is never transmitted to third parties and is deleted upon account deletion.',
+          },
+          revocation: {
+            title: 'Revoking Google Access',
+            text: 'You may revoke MyBalance\'s access to your Google account at any time by visiting your Google Account permissions page at https://myaccount.google.com/permissions and removing MyBalance. Upon revocation, the app will no longer be able to access your spreadsheet. You may also contact us at fabio.f2001@gmail.com to request immediate deletion of all stored tokens and account data from our systems.',
+          },
+          compliance: {
+            title: 'Compliance Statement',
+            text: 'MyBalance\'s use of information received from Google APIs complies with the Google API Services User Data Policy, including the Limited Use requirements. For more information about this policy, please refer to: https://developers.google.com/terms/api-services-user-data-policy',
+          },
+        },
         definitions: {
           title: 'Definitions and Legal References',
           items: {
@@ -465,6 +516,80 @@ export const en = {
     },
     cookiePolicy: {
       title: 'Cookie Policy',
+    },
+    termsOfService: {
+      title: 'Terms of Service',
+      lastUpdated: 'Last updated: March 21, 2026',
+      sections: {
+        acceptance: {
+          title: '1. Acceptance of Terms',
+          text: 'By downloading, installing, or using the MyBalance mobile application ("App") or the MyBalance web service ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the Service. These Terms constitute a legally binding agreement between you and the developer of MyBalance ("we", "us", or "our").',
+        },
+        description: {
+          title: '2. Description of Service',
+          text: 'MyBalance is a personal finance tracking application that uses Google Sheets as the primary data store. The App connects to your personal Google account, creates a dedicated spreadsheet in your Google Drive, and provides an interface to record and visualize your financial transactions. We do not store your financial data on our servers — all transaction data resides exclusively in your Google Drive.',
+        },
+        googleAccount: {
+          title: '3. Google Account and Permissions',
+          text: 'To use MyBalance, you must have a valid Google account. By using the Service, you authorize MyBalance to:\n\n• Access your Google profile information (name, email, profile picture) to identify your account.\n• Create and manage a single dedicated Google Spreadsheet in your Google Drive to store your financial data.\n• Read and write data to that spreadsheet on your behalf.\n\nYou may revoke these permissions at any time from your Google Account settings at https://myaccount.google.com/permissions. Revoking permissions will prevent the App from functioning.',
+        },
+        userObligations: {
+          title: '4. User Obligations',
+          intro: 'You agree to:',
+          items: [
+            'Use the Service only for lawful personal finance tracking purposes.',
+            'Not attempt to reverse-engineer, decompile, or tamper with the application.',
+            'Not use the Service to store or process data belonging to third parties without their consent.',
+            'Keep your Google account credentials secure.',
+            'Notify us promptly at fabio.f2001@gmail.com if you suspect unauthorized access to your account.',
+          ],
+        },
+        dataOwnership: {
+          title: '5. Data Ownership',
+          text: 'Your financial data belongs entirely to you. It is stored in a Google Spreadsheet in your own Google Drive account. We do not claim any ownership over your personal financial data. You can access, export, or delete your data directly from Google Drive at any time, independently of the App.',
+        },
+        dataWeStore: {
+          title: '6. Data We Store on Our Servers',
+          text: 'Our servers (PostgreSQL on Vercel) store only the minimum data required to operate the Service:',
+          items: [
+            'Your Google account email address and display name.',
+            'A reference to the ID of your dedicated spreadsheet.',
+            'An AES-encrypted copy of your Google OAuth refresh token, used solely to access your spreadsheet on your behalf.',
+            'Session metadata (device identifiers, session tokens) to support multi-device access.',
+            'Push notification tokens (if you enable notifications).',
+          ],
+          deletion: 'All data stored on our servers is permanently deleted upon account deletion. To request deletion, contact us at fabio.f2001@gmail.com.',
+        },
+        intellectualProperty: {
+          title: '7. Intellectual Property',
+          text: 'The MyBalance application, its source code, design, and branding are the intellectual property of the developer. The source code is made available under the MIT License on GitHub. You are free to use, modify, and distribute the source code in accordance with the MIT License terms. The MyBalance name and logo may not be used without prior written permission.',
+        },
+        disclaimer: {
+          title: '8. Disclaimer of Warranties',
+          text: 'THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR THAT DEFECTS WILL BE CORRECTED. YOUR USE OF THE SERVICE IS AT YOUR SOLE RISK.',
+        },
+        limitation: {
+          title: '9. Limitation of Liability',
+          text: 'TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, WE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR DATA, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE SERVICE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR TOTAL LIABILITY TO YOU FOR ALL CLAIMS ARISING FROM OR RELATED TO THE SERVICE SHALL NOT EXCEED THE AMOUNT YOU PAID US IN THE TWELVE MONTHS PRECEDING THE CLAIM, OR FIFTY EUROS (€50), WHICHEVER IS GREATER.',
+        },
+        termination: {
+          title: '10. Termination',
+          text: 'We reserve the right to suspend or terminate your access to the Service at any time, with or without notice, for conduct that we believe violates these Terms or is harmful to other users, us, third parties, or the integrity of the Service. You may stop using the Service at any time. Upon termination, your data on our servers will be deleted within 30 days, but your Google Sheets data remains in your Google Drive and is unaffected.',
+        },
+        changes: {
+          title: '11. Changes to Terms',
+          text: 'We reserve the right to modify these Terms at any time. We will notify users of material changes by updating the "Last updated" date at the top of this page and, where possible, through a notification in the App. Your continued use of the Service after changes become effective constitutes acceptance of the revised Terms.',
+        },
+        governingLaw: {
+          title: '12. Governing Law',
+          text: 'These Terms shall be governed by and construed in accordance with the laws of Italy, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of Italy.',
+        },
+        contact: {
+          title: '13. Contact',
+          text: 'For any questions about these Terms of Service, please contact us at:',
+          email: 'fabio.f2001@gmail.com',
+        },
+      },
     },
   },
 };

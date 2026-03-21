@@ -7,6 +7,7 @@ import HowItWorks from "./pages/HowItWorks";
 import TechStack from "./pages/TechStack";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CookiePolicy from "./pages/CookiePolicy";
+import TermsOfService from "./pages/TermsOfService";
 import { LocaleProvider, useLocale } from "./hooks/useLocale";
 
 const ScrollToTop = () => {
@@ -55,6 +56,7 @@ const AppContent: React.FC = () => {
             <Route path="/tech-stack" element={<TechStack />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/cookie-policy" element={<CookiePolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
           </Routes>
         </main>
 
@@ -69,6 +71,10 @@ const AppContent: React.FC = () => {
             <span>·</span>
             <Link to="/cookie-policy" className="hover:text-[#2f4f3f] transition-colors">
               {t.footer.cookiePolicy}
+            </Link>
+            <span>·</span>
+            <Link to="/terms-of-service" className="hover:text-[#2f4f3f] transition-colors">
+              {t.footer.termsOfService}
             </Link>
           </div>
         </footer>

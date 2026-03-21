@@ -260,6 +260,7 @@ export const it: Translations = {
     copyright: 'MyBalance. Made with <3 by Fabio Altea.',
     privacyPolicy: 'Privacy Policy',
     cookiePolicy: 'Cookie Policy',
+    termsOfService: 'Termini di Servizio',
   },
 
   // Legal
@@ -410,6 +411,56 @@ export const it: Translations = {
             text2: 'Qualora le modifiche interessino trattamenti la cui base giuridica è il consenso, il Titolare provvederà a raccogliere nuovamente il consenso dell\'Utente, se necessario.',
           },
         },
+        googleApi: {
+          title: 'Servizi API Google — Politica sui Dati Utente',
+          intro: 'L\'utilizzo e il trasferimento delle informazioni ricevute dalle API Google da parte di MyBalance aderisce alla Politica sui dati utente dei servizi API Google, compresi i requisiti di utilizzo limitato. Questa sezione descrive con precisione come accediamo, utilizziamo, archiviamo e proteggiamo i dati ottenuti tramite Google OAuth.',
+          dataAccessed: {
+            title: 'Dati Google a cui Accediamo',
+            intro: 'Quando accedi con Google, MyBalance richiede le seguenti autorizzazioni OAuth:',
+            items: [
+              {
+                scope: 'openid / profile / email',
+                purpose: 'Utilizzati esclusivamente per identificarti, creare o recuperare il tuo account e visualizzare il tuo nome e la tua foto profilo all\'interno dell\'app. Non utilizziamo queste informazioni per nessun altro scopo.',
+              },
+              {
+                scope: 'https://www.googleapis.com/auth/spreadsheets',
+                purpose: 'Utilizzato esclusivamente per creare, leggere e aggiornare un singolo Google Spreadsheet dedicato nel tuo Google Drive, dove vengono memorizzati tutti i tuoi dati finanziari personali. MyBalance non accede mai ad altri fogli di calcolo o file nel tuo Drive al di là di quello che crea per te.',
+              },
+            ],
+          },
+          limitedUse: {
+            title: 'Utilizzo Limitato dei Dati Utente Google',
+            intro: 'I dati ottenuti dalle API Google sono utilizzati in modo stretto ed esclusivo per i seguenti scopi:',
+            items: [
+              'Autenticare la tua identità per fornire accesso sicuro all\'applicazione.',
+              'Creare e gestire un foglio di calcolo dedicato nel tuo Google Drive per memorizzare i tuoi dati finanziari personali (transazioni, conti, categorie).',
+              'Leggere e scrivere i tuoi dati finanziari da e verso quel foglio di calcolo per tuo conto.',
+              'Visualizzare il tuo nome e la tua foto profilo nell\'interfaccia dell\'applicazione.',
+            ],
+            prohibitions: {
+              title: 'Non utilizziamo i tuoi dati per:',
+              items: [
+                'Condividere, vendere, affittare o trasferire i tuoi dati utente Google a terzi.',
+                'Utilizzare i tuoi dati Google Sheets per scopi pubblicitari, di profilazione o di marketing.',
+                'Consentire a persone fisiche di leggere i tuoi dati Google Sheets, eccetto ove strettamente necessario per rispondere a incidenti di sicurezza o per conformità legale.',
+                'Accedere a Google Sheets, file Drive o dati diversi dal singolo foglio di calcolo dedicato di MyBalance.',
+                'Utilizzare i dati utente Google per qualsiasi scopo non descritto in questa Privacy Policy.',
+              ],
+            },
+          },
+          dataStorage: {
+            title: 'Archiviazione delle Credenziali Google',
+            text: 'Per consentire un accesso fluido al tuo Google Sheets senza richiedere la riautenticazione ad ogni sessione, MyBalance archivia in modo sicuro il tuo token di aggiornamento OAuth di Google in formato crittografato AES nel nostro database PostgreSQL ospitato su Vercel (Stati Uniti). Il token di aggiornamento viene utilizzato esclusivamente per ottenere token di accesso di breve durata per interagire con il tuo foglio di calcolo per tuo conto. Non viene mai trasmesso a terzi e viene eliminato alla cancellazione dell\'account.',
+          },
+          revocation: {
+            title: 'Revoca dell\'Accesso Google',
+            text: 'Puoi revocare l\'accesso di MyBalance al tuo account Google in qualsiasi momento visitando la pagina delle autorizzazioni del tuo account Google su https://myaccount.google.com/permissions e rimuovendo MyBalance. In seguito alla revoca, l\'app non sarà più in grado di accedere al tuo foglio di calcolo. Puoi anche contattarci all\'indirizzo fabio.f2001@gmail.com per richiedere l\'eliminazione immediata di tutti i token archiviati e dei dati dell\'account dai nostri sistemi.',
+          },
+          compliance: {
+            title: 'Dichiarazione di Conformità',
+            text: 'L\'utilizzo da parte di MyBalance delle informazioni ricevute dalle API Google è conforme alla Politica sui dati utente dei servizi API Google, compresi i requisiti di utilizzo limitato. Per ulteriori informazioni su questa politica, consulta: https://developers.google.com/terms/api-services-user-data-policy',
+          },
+        },
         definitions: {
           title: 'Definizioni e riferimenti legali',
           items: {
@@ -467,6 +518,80 @@ export const it: Translations = {
     },
     cookiePolicy: {
       title: 'Cookie Policy',
+    },
+    termsOfService: {
+      title: 'Termini di Servizio',
+      lastUpdated: 'Ultimo aggiornamento: 21 marzo 2026',
+      sections: {
+        acceptance: {
+          title: '1. Accettazione dei Termini',
+          text: 'Scaricando, installando o utilizzando l\'applicazione mobile MyBalance (\"App\") o il servizio web MyBalance (\"Servizio\"), accetti di essere vincolato dai presenti Termini di Servizio (\"Termini\"). Se non accetti questi Termini, non utilizzare il Servizio. I presenti Termini costituiscono un accordo legalmente vincolante tra te e lo sviluppatore di MyBalance (\"noi\", \"ci\" o \"nostro\").',
+        },
+        description: {
+          title: '2. Descrizione del Servizio',
+          text: 'MyBalance è un\'applicazione per il tracciamento delle finanze personali che utilizza Google Sheets come archivio dati principale. L\'App si connette al tuo account Google personale, crea un foglio di calcolo dedicato nel tuo Google Drive e fornisce un\'interfaccia per registrare e visualizzare le tue transazioni finanziarie. Non memorizziamo i tuoi dati finanziari sui nostri server — tutti i dati sulle transazioni risiedono esclusivamente nel tuo Google Drive.',
+        },
+        googleAccount: {
+          title: '3. Account Google e Permessi',
+          text: 'Per utilizzare MyBalance, devi avere un account Google valido. Utilizzando il Servizio, autorizzi MyBalance a:\n\n• Accedere alle informazioni del tuo profilo Google (nome, email, foto profilo) per identificare il tuo account.\n• Creare e gestire un singolo Google Spreadsheet dedicato nel tuo Google Drive per archiviare i tuoi dati finanziari.\n• Leggere e scrivere dati su quel foglio di calcolo per tuo conto.\n\nPuoi revocare questi permessi in qualsiasi momento dalle impostazioni del tuo account Google su https://myaccount.google.com/permissions. La revoca dei permessi impedirà il funzionamento dell\'App.',
+        },
+        userObligations: {
+          title: '4. Obblighi dell\'Utente',
+          intro: 'Accetti di:',
+          items: [
+            'Utilizzare il Servizio esclusivamente per scopi legali di tracciamento delle finanze personali.',
+            'Non tentare di fare reverse engineering, decompilare o manomettere l\'applicazione.',
+            'Non utilizzare il Servizio per archiviare o elaborare dati di terzi senza il loro consenso.',
+            'Mantenere sicure le credenziali del tuo account Google.',
+            'Notificarci tempestivamente all\'indirizzo fabio.f2001@gmail.com in caso di sospetto accesso non autorizzato al tuo account.',
+          ],
+        },
+        dataOwnership: {
+          title: '5. Proprietà dei Dati',
+          text: 'I tuoi dati finanziari ti appartengono interamente. Sono archiviati in un Google Spreadsheet nel tuo account Google Drive. Non rivendichiamo alcuna proprietà sui tuoi dati finanziari personali. Puoi accedere, esportare o eliminare i tuoi dati direttamente da Google Drive in qualsiasi momento, indipendentemente dall\'App.',
+        },
+        dataWeStore: {
+          title: '6. Dati che Archiviamo sui Nostri Server',
+          text: 'I nostri server (PostgreSQL su Vercel) archiviano solo i dati minimi necessari per far funzionare il Servizio:',
+          items: [
+            'Il tuo indirizzo email e nome visualizzato dell\'account Google.',
+            'Un riferimento all\'ID del tuo foglio di calcolo dedicato.',
+            'Una copia cifrata con AES del tuo token di aggiornamento OAuth di Google, utilizzata esclusivamente per accedere al tuo foglio di calcolo per tuo conto.',
+            'Metadati di sessione (identificatori di dispositivo, token di sessione) per supportare l\'accesso multi-dispositivo.',
+            'Token per notifiche push (se abiliti le notifiche).',
+          ],
+          deletion: 'Tutti i dati archiviati sui nostri server vengono eliminati definitivamente alla cancellazione dell\'account. Per richiedere la cancellazione, contattaci all\'indirizzo fabio.f2001@gmail.com.',
+        },
+        intellectualProperty: {
+          title: '7. Proprietà Intellettuale',
+          text: 'L\'applicazione MyBalance, il suo codice sorgente, design e branding sono proprietà intellettuale dello sviluppatore. Il codice sorgente è reso disponibile sotto licenza MIT su GitHub. Sei libero di utilizzare, modificare e distribuire il codice sorgente in conformità con i termini della licenza MIT. Il nome e il logo MyBalance non possono essere utilizzati senza previa autorizzazione scritta.',
+        },
+        disclaimer: {
+          title: '8. Esclusione di Garanzie',
+          text: 'IL SERVIZIO È FORNITO \"COSÌ COM\'È\" E \"COME DISPONIBILE\" SENZA GARANZIE DI ALCUN TIPO, ESPLICITE O IMPLICITE, INCLUSE MA NON LIMITATE ALLE GARANZIE DI COMMERCIABILITÀ, IDONEITÀ A UNO SCOPO PARTICOLARE O NON VIOLAZIONE. NON GARANTIAMO CHE IL SERVIZIO SARÀ ININTERROTTO, PRIVO DI ERRORI O CHE I DIFETTI SARANNO CORRETTORE. L\'UTILIZZO DEL SERVIZIO AVVIENE A TUO ESCLUSIVO RISCHIO.',
+        },
+        limitation: {
+          title: '9. Limitazione di Responsabilità',
+          text: 'NELLA MISURA MASSIMA CONSENTITA DALLA LEGGE APPLICABILE, NON SAREMO RESPONSABILI PER DANNI INDIRETTI, INCIDENTALI, SPECIALI, CONSEQUENZIALI O PUNITIVI, NÉ PER PERDITA DI PROFITTI O DATI, DERIVANTI DA O IN CONNESSIONE CON L\'UTILIZZO DEL SERVIZIO, ANCHE SE SIAMO STATI AVVISATI DELLA POSSIBILITÀ DI TALI DANNI. LA NOSTRA RESPONSABILITÀ TOTALE NEI TUOI CONFRONTI PER TUTTI I RECLAMI DERIVANTI DA O RELATIVI AL SERVIZIO NON SUPERERÀ L\'IMPORTO CHE CI HAI PAGATO NEI DODICI MESI PRECEDENTI IL RECLAMO, O CINQUANTA EURO (€50), A SECONDA DI QUALE SIA MAGGIORE.',
+        },
+        termination: {
+          title: '10. Risoluzione',
+          text: 'Ci riserviamo il diritto di sospendere o terminare il tuo accesso al Servizio in qualsiasi momento, con o senza preavviso, per comportamenti che riteniamo violino i presenti Termini o siano dannosi per altri utenti, per noi, per terzi o per l\'integrità del Servizio. Puoi smettere di utilizzare il Servizio in qualsiasi momento. Alla risoluzione, i tuoi dati sui nostri server verranno eliminati entro 30 giorni, ma i dati nel tuo Google Sheets rimangono nel tuo Google Drive e non sono interessati.',
+        },
+        changes: {
+          title: '11. Modifiche ai Termini',
+          text: 'Ci riserviamo il diritto di modificare i presenti Termini in qualsiasi momento. Informeremo gli utenti delle modifiche sostanziali aggiornando la data \"Ultimo aggiornamento\" in cima a questa pagina e, ove possibile, tramite una notifica nell\'App. Il tuo continuato utilizzo del Servizio dopo che le modifiche diventano effettive costituisce accettazione dei Termini rivisti.',
+        },
+        governingLaw: {
+          title: '12. Legge Applicabile',
+          text: 'I presenti Termini sono disciplinati e interpretati in conformità con le leggi della Repubblica Italiana, senza riguardo alle sue disposizioni sul conflitto di leggi. Qualsiasi controversia derivante dai presenti Termini sarà soggetta alla giurisdizione esclusiva dei tribunali italiani.',
+        },
+        contact: {
+          title: '13. Contatti',
+          text: 'Per qualsiasi domanda relativa ai presenti Termini di Servizio, contattaci all\'indirizzo:',
+          email: 'fabio.f2001@gmail.com',
+        },
+      },
     },
   },
 };
