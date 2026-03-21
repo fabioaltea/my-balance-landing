@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { HashRouter, Routes, Route, useLocation, Link } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate, useLocation, Link } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import LiquidBackground from "./components/LiquidBackground";
 import Home from "./pages/Home";
@@ -57,6 +57,7 @@ const AppContent: React.FC = () => {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/cookie-policy" element={<CookiePolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
 
@@ -65,15 +66,24 @@ const AppContent: React.FC = () => {
             &copy; {new Date().getFullYear()} {t.footer.copyright}
           </p>
           <div className="flex justify-center gap-4">
-            <Link to="/privacy-policy" className="hover:text-[#2f4f3f] transition-colors">
+            <Link
+              to="/privacy-policy"
+              className="hover:text-[#2f4f3f] transition-colors"
+            >
               {t.footer.privacyPolicy}
             </Link>
             <span>·</span>
-            <Link to="/cookie-policy" className="hover:text-[#2f4f3f] transition-colors">
+            <Link
+              to="/cookie-policy"
+              className="hover:text-[#2f4f3f] transition-colors"
+            >
               {t.footer.cookiePolicy}
             </Link>
             <span>·</span>
-            <Link to="/terms-of-service" className="hover:text-[#2f4f3f] transition-colors">
+            <Link
+              to="/terms-of-service"
+              className="hover:text-[#2f4f3f] transition-colors"
+            >
               {t.footer.termsOfService}
             </Link>
           </div>
