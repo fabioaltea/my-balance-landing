@@ -29,14 +29,14 @@ This is the **MyBalance Landing Page** — the marketing website for MyBalance. 
 
 ## Routes
 
-| Path | Page |
-|------|------|
-| `/` | Home (hero, features, waitlist) |
-| `/how-it-works` | Product explanation |
-| `/tech-stack` | Technology details |
-| `/privacy-policy` | Privacy legal |
-| `/cookie-policy` | Cookie legal |
-| `/terms-of-service` | Terms legal |
+| Path                | Page                            |
+| ------------------- | ------------------------------- |
+| `/`                 | Home (hero, features, waitlist) |
+| `/how-it-works`     | Product explanation             |
+| `/tech-stack`       | Technology details              |
+| `/privacy-policy`   | Privacy legal                   |
+| `/cookie-policy`    | Cookie legal                    |
+| `/terms-of-service` | Terms legal                     |
 
 ## Dev
 
