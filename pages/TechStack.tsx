@@ -1,15 +1,6 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
-import {
-  Github,
-  Server,
-  Layout,
-  Database,
-  Shield,
-  Key,
-  Cloud,
-  Smartphone,
-} from "lucide-react";
+import { Github, Server, Layout, Database, Shield, Key, Cloud, Smartphone } from 'lucide-react';
 import { useLocale } from '../hooks/useLocale';
 
 const TechStack: React.FC = () => {
@@ -25,7 +16,7 @@ const TechStack: React.FC = () => {
         y: 30,
         opacity: 0,
         duration: 0.8,
-        ease: "power3.out",
+        ease: 'power3.out',
       });
 
       // Animate subtitle
@@ -34,7 +25,7 @@ const TechStack: React.FC = () => {
         opacity: 0,
         duration: 0.6,
         delay: 0.2,
-        ease: "power3.out",
+        ease: 'power3.out',
       });
 
       // Animate cards with stagger
@@ -44,7 +35,7 @@ const TechStack: React.FC = () => {
         duration: 0.6,
         stagger: 0.1,
         delay: 0.4,
-        ease: "power3.out",
+        ease: 'power3.out',
       });
 
       // Animate CTA section
@@ -53,19 +44,28 @@ const TechStack: React.FC = () => {
         opacity: 0,
         duration: 0.8,
         delay: 0.8,
-        ease: "power3.out",
+        ease: 'power3.out',
       });
     }, containerRef);
 
     return () => ctx.revert();
   }, []);
-  
+
   return (
-    <div ref={containerRef} className="pt-20 md:pt-32 pb-32 md:pb-20 px-4 max-w-full md:max-w-5xl mx-auto min-h-screen">
-      <h1 ref={titleRef} className="text-3xl md:text-5xl font-bold text-[#2f4f3f] dark:text-white mb-4 md:mb-6 text-center">
+    <div
+      ref={containerRef}
+      className="pt-20 md:pt-32 pb-32 md:pb-20 px-4 max-w-full md:max-w-5xl mx-auto min-h-screen"
+    >
+      <h1
+        ref={titleRef}
+        className="text-3xl md:text-5xl font-bold text-[#2f4f3f] dark:text-white mb-4 md:mb-6 text-center"
+      >
         {t.techStack.title}
       </h1>
-      <p ref={subtitleRef} className="text-center text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-16">
+      <p
+        ref={subtitleRef}
+        className="text-center text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-16"
+      >
         {t.techStack.subtitle}
       </p>
 
@@ -73,10 +73,7 @@ const TechStack: React.FC = () => {
         {/* Mobile App */}
         <div className="tech-card p-8 rounded-[2.5rem] bg-white/40 dark:bg-gray-900/40 backdrop-blur-md border border-white/20">
           <div className="flex items-center gap-4 mb-6">
-            <Smartphone
-              className="text-blue-600 dark:text-blue-400"
-              size={32}
-            />
+            <Smartphone className="text-blue-600 dark:text-blue-400" size={32} />
             <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
               {t.techStack.sections.mobileApp.title}
             </h2>
@@ -132,10 +129,7 @@ const TechStack: React.FC = () => {
         {/* Data Storage */}
         <div className="tech-card p-8 rounded-[2.5rem] bg-white/40 dark:bg-gray-900/40 backdrop-blur-md border border-white/20">
           <div className="flex items-center gap-4 mb-6">
-            <Database
-              className="text-green-600 dark:text-green-400"
-              size={32}
-            />
+            <Database className="text-green-600 dark:text-green-400" size={32} />
             <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
               {t.techStack.sections.dataStorage.title}
             </h2>
@@ -163,10 +157,7 @@ const TechStack: React.FC = () => {
         {/* Authentication */}
         <div className="tech-card p-8 rounded-[2.5rem] bg-white/40 dark:bg-gray-900/40 backdrop-blur-md border border-white/20">
           <div className="flex items-center gap-4 mb-6">
-            <Shield
-              className="text-orange-600 dark:text-orange-400"
-              size={32}
-            />
+            <Shield className="text-orange-600 dark:text-orange-400" size={32} />
             <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
               {t.techStack.sections.security.title}
             </h2>
@@ -200,10 +191,7 @@ const TechStack: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-center">
           <div className="flex flex-col items-center gap-2">
             <div className="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
-              <Smartphone
-                className="text-blue-600 dark:text-blue-400"
-                size={28}
-              />
+              <Smartphone className="text-blue-600 dark:text-blue-400" size={28} />
             </div>
             <span className="font-semibold text-gray-800 dark:text-white">
               {t.techStack.architecture.mobileApp}
@@ -213,16 +201,11 @@ const TechStack: React.FC = () => {
             </span>
           </div>
 
-          <div className="text-2xl text-gray-400 dark:text-gray-500 rotate-90 md:rotate-0">
-            →
-          </div>
+          <div className="text-2xl text-gray-400 dark:text-gray-500 rotate-90 md:rotate-0">→</div>
 
           <div className="flex flex-col items-center gap-2">
             <div className="w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
-              <Cloud
-                className="text-purple-600 dark:text-purple-400"
-                size={28}
-              />
+              <Cloud className="text-purple-600 dark:text-purple-400" size={28} />
             </div>
             <span className="font-semibold text-gray-800 dark:text-white">
               {t.techStack.architecture.backendApi}
@@ -232,16 +215,11 @@ const TechStack: React.FC = () => {
             </span>
           </div>
 
-          <div className="text-2xl text-gray-400 dark:text-gray-500 rotate-90 md:rotate-0">
-            →
-          </div>
+          <div className="text-2xl text-gray-400 dark:text-gray-500 rotate-90 md:rotate-0">→</div>
 
           <div className="flex flex-col items-center gap-2">
             <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
-              <Database
-                className="text-green-600 dark:text-green-400"
-                size={28}
-              />
+              <Database className="text-green-600 dark:text-green-400" size={28} />
             </div>
             <span className="font-semibold text-gray-800 dark:text-white">
               {t.techStack.architecture.yourData}

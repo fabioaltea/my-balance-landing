@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { HashRouter, Routes, Route, Navigate, useLocation, Link } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import LiquidBackground from "./components/LiquidBackground";
-import Home from "./pages/Home";
-import HowItWorks from "./pages/HowItWorks";
-import TechStack from "./pages/TechStack";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import CookiePolicy from "./pages/CookiePolicy";
-import TermsOfService from "./pages/TermsOfService";
-import { LocaleProvider, useLocale } from "./hooks/useLocale";
+import React, { useState, useEffect } from 'react';
+import { HashRouter, Routes, Route, Navigate, useLocation, Link } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import LiquidBackground from './components/LiquidBackground';
+import Home from './pages/Home';
+import HowItWorks from './pages/HowItWorks';
+import TechStack from './pages/TechStack';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import CookiePolicy from './pages/CookiePolicy';
+import TermsOfService from './pages/TermsOfService';
+import { LocaleProvider, useLocale } from './hooks/useLocale';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -24,7 +24,7 @@ const AppContent: React.FC = () => {
 
   // Initialize theme based on preference
   useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setIsDark(true);
     }
   }, []);
@@ -32,9 +32,9 @@ const AppContent: React.FC = () => {
   // Update DOM class for Tailwind Dark Mode
   useEffect(() => {
     if (isDark) {
-      document.documentElement.classList.add("dark");
+      document.documentElement.classList.add('dark');
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove('dark');
     }
   }, [isDark]);
 
@@ -44,7 +44,7 @@ const AppContent: React.FC = () => {
     <HashRouter>
       <ScrollToTop />
       <div
-        className={`min-h-screen overflow-x-hidden transition-colors duration-500 ${isDark ? "text-white" : "text-gray-900"}`}
+        className={`min-h-screen overflow-x-hidden transition-colors duration-500 ${isDark ? 'text-white' : 'text-gray-900'}`}
       >
         <LiquidBackground />
         <Navbar isDark={isDark} toggleTheme={toggleTheme} />
@@ -66,24 +66,15 @@ const AppContent: React.FC = () => {
             &copy; {new Date().getFullYear()} {t.footer.copyright}
           </p>
           <div className="flex justify-center gap-4">
-            <Link
-              to="/privacy-policy"
-              className="hover:text-[#2f4f3f] transition-colors"
-            >
+            <Link to="/privacy-policy" className="hover:text-[#2f4f3f] transition-colors">
               {t.footer.privacyPolicy}
             </Link>
             <span>·</span>
-            <Link
-              to="/cookie-policy"
-              className="hover:text-[#2f4f3f] transition-colors"
-            >
+            <Link to="/cookie-policy" className="hover:text-[#2f4f3f] transition-colors">
               {t.footer.cookiePolicy}
             </Link>
             <span>·</span>
-            <Link
-              to="/terms-of-service"
-              className="hover:text-[#2f4f3f] transition-colors"
-            >
+            <Link to="/terms-of-service" className="hover:text-[#2f4f3f] transition-colors">
               {t.footer.termsOfService}
             </Link>
           </div>

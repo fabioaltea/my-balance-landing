@@ -4,9 +4,13 @@ interface LogoProps {
   className?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({ className = "" }) => {
+const Logo: React.FC<LogoProps> = ({ className = '' }) => {
   return (
-    <div className={`flex items-end gap-1.5 h-12 ${className}`} role="img" aria-label="MyBalance Logo">
+    <div
+      className={`flex items-end gap-1.5 h-12 ${className}`}
+      role="img"
+      aria-label="MyBalance Logo"
+    >
       {/* Static Bar 1 */}
       <div className="w-3 rounded-full bg-[#2f4f3f] dark:bg-[#4a7a63] h-[50%] opacity-60"></div>
       {/* Static Bar 2 */}

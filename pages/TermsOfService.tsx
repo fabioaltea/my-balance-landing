@@ -1,5 +1,5 @@
-import React from "react";
-import { useLocale } from "../hooks/useLocale";
+import React from 'react';
+import { useLocale } from '../hooks/useLocale';
 
 const TermsOfService: React.FC = () => {
   const { t } = useLocale();

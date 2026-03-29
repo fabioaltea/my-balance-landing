@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { NavItem } from "../types";
-import { Sun, Moon, Languages } from "lucide-react";
-import { useLocale } from "../hooks/useLocale";
-import { Locale, localeNames } from "../locales";
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { NavItem } from '../types';
+import { Sun, Moon, Languages } from 'lucide-react';
+import { useLocale } from '../hooks/useLocale';
+import { Locale, localeNames } from '../locales';
 
 interface NavbarProps {
   isDark: boolean;
@@ -15,9 +15,9 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
   const [showLangMenu, setShowLangMenu] = useState(false);
 
   const navItems: NavItem[] = [
-    { label: t.nav.myBalance, path: "/" },
-    { label: t.nav.howItWorks, path: "/how-it-works" },
-    { label: t.nav.techStack, path: "/tech-stack" },
+    { label: t.nav.myBalance, path: '/' },
+    { label: t.nav.howItWorks, path: '/how-it-works' },
+    { label: t.nav.techStack, path: '/tech-stack' },
   ];
 
   return (
@@ -42,8 +42,8 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
                 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap
                 ${
                   isActive
-                    ? "bg-white/80 dark:bg-white/10 text-[#2f4f3f] dark:text-white shadow-sm"
-                    : "text-gray-600 dark:text-gray-400 hover:text-[#2f4f3f] dark:hover:text-white hover:bg-white/40 dark:hover:bg-white/5"
+                    ? 'bg-white/80 dark:bg-white/10 text-[#2f4f3f] dark:text-white shadow-sm'
+                    : 'text-gray-600 dark:text-gray-400 hover:text-[#2f4f3f] dark:hover:text-white hover:bg-white/40 dark:hover:bg-white/5'
                 }
               `}
             >
@@ -75,8 +75,8 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
                   flex-1 text-center px-4 py-3 rounded-full text-xs font-semibold transition-all duration-300 whitespace-nowrap
                   ${
                     isActive
-                      ? "bg-white/80 dark:bg-white/10 text-[#2f4f3f] dark:text-white shadow-sm"
-                      : "text-gray-600 dark:text-gray-400 active:bg-white/40 dark:active:bg-white/5"
+                      ? 'bg-white/80 dark:bg-white/10 text-[#2f4f3f] dark:text-white shadow-sm'
+                      : 'text-gray-600 dark:text-gray-400 active:bg-white/40 dark:active:bg-white/5'
                   }
                 `}
               >
@@ -110,10 +110,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
           {showLangMenu && (
             <>
               {/* Backdrop to close menu */}
-              <div
-                className="fixed inset-0 z-40"
-                onClick={() => setShowLangMenu(false)}
-              />
+              <div className="fixed inset-0 z-40" onClick={() => setShowLangMenu(false)} />
               {/* Menu */}
               <div className="absolute right-0 top-14 z-50 min-w-[140px] rounded-2xl backdrop-blur-xl bg-white/40 dark:bg-black/40 border border-white/40 dark:border-white/10 shadow-xl overflow-hidden">
                 {(Object.keys(localeNames) as Locale[]).map((lang) => (
@@ -127,8 +124,8 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
                       w-full px-4 py-3 text-left text-sm font-semibold transition-all duration-200
                       ${
                         locale === lang
-                          ? "bg-white/80 dark:bg-white/10 text-[#2f4f3f] dark:text-white"
-                          : "text-gray-600 dark:text-gray-400 hover:bg-white/40 dark:hover:bg-white/5"
+                          ? 'bg-white/80 dark:bg-white/10 text-[#2f4f3f] dark:text-white'
+                          : 'text-gray-600 dark:text-gray-400 hover:bg-white/40 dark:hover:bg-white/5'
                       }
                     `}
                   >

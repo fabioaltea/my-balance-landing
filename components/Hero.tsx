@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
         y: 30,
         opacity: 0,
         duration: 1.2,
-        ease: "power4.out",
+        ease: 'power4.out',
       });
 
       // Animate the text/buttons block with a slight delay
@@ -28,8 +28,8 @@ const Hero: React.FC = () => {
         y: 40,
         opacity: 0,
         duration: 1,
-        ease: "power3.out",
-        delay: 0.3
+        ease: 'power3.out',
+        delay: 0.3,
       });
 
       // Animate the phone mockup
@@ -37,16 +37,18 @@ const Hero: React.FC = () => {
         y: 60,
         opacity: 0,
         duration: 1.2,
-        ease: "power3.out",
-        delay: 0.5
+        ease: 'power3.out',
+        delay: 0.5,
       });
     }, heroRef);
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 ">
-      
+    <section
+      ref={heroRef}
+      className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 "
+    >
       {/* Name and Logo Block */}
       <div ref={titleRef} className="flex flex-col items-center justify-center mb-10">
         <div className="mb-6">
@@ -63,7 +65,7 @@ const Hero: React.FC = () => {
             {t.hero.tagline}
           </span>
         </h2>
-        
+
         <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-lg mx-auto leading-relaxed">
           {t.hero.description}
         </p>
@@ -78,7 +80,8 @@ const Hero: React.FC = () => {
             bg-[#2f4f3f] text-white font-semibold text-lg
             hover:bg-[#3d6652] hover:scale-105 active:scale-95
             transition-all duration-300 shadow-xl shadow-[#2f4f3f]/20
-          ">
+          "
+          >
             {t.hero.getStarted}
             <ArrowRight size={20} />
           </button>
@@ -91,14 +94,13 @@ const Hero: React.FC = () => {
             border border-white/20 dark:border-white/10
             text-[#2f4f3f] dark:text-white font-semibold text-lg
             hover:bg-white/70 dark:hover:bg-white/10 transition-all duration-300
-          ">
+          "
+          >
             {t.nav.howItWorks}
             <ArrowRight size={20} />
           </button>
         </div>
       </div>
-
-     
     </section>
   );
 };

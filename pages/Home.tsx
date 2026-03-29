@@ -1,13 +1,29 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Hero from "../components/Hero";
-import FeatureCard from "../components/FeatureCard";
-import { Layers, Shield, Zap, Apple, Smartphone, Globe, Send, Check, AlertCircle, BarChart3, Table2, Lock, Settings2, Lightbulb, X } from "lucide-react";
-import appScreenshot from "../assets/IMG_2051.PNG";
-import chartsScreenshot1 from "../assets/IMG_2052.PNG";
-import chartsScreenshot2 from "../assets/IMG_2053.PNG";
-import movementScreenshot from "../assets/IMG_2054.PNG";
-import { useLocale } from "../hooks/useLocale";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Hero from '../components/Hero';
+import FeatureCard from '../components/FeatureCard';
+import {
+  Layers,
+  Shield,
+  Zap,
+  Apple,
+  Smartphone,
+  Globe,
+  Send,
+  Check,
+  AlertCircle,
+  BarChart3,
+  Table2,
+  Lock,
+  Settings2,
+  Lightbulb,
+  X,
+} from 'lucide-react';
+import appScreenshot from '../assets/IMG_2051.PNG';
+import chartsScreenshot1 from '../assets/IMG_2052.PNG';
+import chartsScreenshot2 from '../assets/IMG_2053.PNG';
+import movementScreenshot from '../assets/IMG_2054.PNG';
+import { useLocale } from '../hooks/useLocale';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 
@@ -63,11 +79,7 @@ const Home: React.FC = () => {
             <div className="relative rounded-[2.5rem] p-2 bg-gray-900 shadow-2xl shadow-black/40">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-gray-900 rounded-b-xl z-10" />
               <div className="rounded-[2rem] overflow-hidden bg-black">
-                <img
-                  src={appScreenshot}
-                  alt="MyBalance App"
-                  className="w-full h-auto"
-                />
+                <img src={appScreenshot} alt="MyBalance App" className="w-full h-auto" />
               </div>
             </div>
             <div className="absolute -inset-4 bg-[#2f4f3f]/30 rounded-[3rem] -z-10 blur-2xl" />
@@ -87,20 +99,14 @@ const Home: React.FC = () => {
               <div className="relative rounded-[2.5rem] p-2 bg-gray-900 shadow-xl">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-gray-900 rounded-b-xl z-10" />
                 <div className="rounded-[2rem] overflow-hidden bg-black">
-                  <img
-                    src={appScreenshot}
-                    alt="MyBalance App"
-                    className="w-full h-auto"
-                  />
+                  <img src={appScreenshot} alt="MyBalance App" className="w-full h-auto" />
                 </div>
               </div>
             </div>
 
             {/* Text Content */}
             <div className="text-center md:text-left text-white">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                {t.home.trackSection.title}
-              </h3>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">{t.home.trackSection.title}</h3>
               <p className="text-white/70 text-lg leading-relaxed mb-6">
                 {t.home.trackSection.description}
               </p>
@@ -195,11 +201,7 @@ const Home: React.FC = () => {
                 <div className="relative rounded-[2rem] p-1.5 bg-gray-900 shadow-xl">
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-gray-900 rounded-b-lg z-10" />
                   <div className="rounded-[1.5rem] overflow-hidden bg-black">
-                    <img
-                      src={chartsScreenshot1}
-                      alt="Balance History"
-                      className="w-full h-auto"
-                    />
+                    <img src={chartsScreenshot1} alt="Balance History" className="w-full h-auto" />
                   </div>
                 </div>
               </div>
@@ -400,9 +402,7 @@ const Home: React.FC = () => {
 
           {/* Right: For Who */}
           <div className="rounded-[2.5rem] p-8 bg-gradient-to-br from-[#2f4f3f] to-[#1a3025] text-white">
-            <h3 className="text-xl font-semibold mb-2">
-              {t.home.whySection.forWho.subtitle}
-            </h3>
+            <h3 className="text-xl font-semibold mb-2">{t.home.whySection.forWho.subtitle}</h3>
             {/* <p className="text-white/70 mb-6">
               {t.home.whySection.forWho.subtitle}
             </p> */}
@@ -411,9 +411,7 @@ const Home: React.FC = () => {
                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                   <BarChart3 className="w-5 h-5 text-green-400" />
                 </div>
-                <p className="text-white/90 pt-2">
-                  {t.home.whySection.forWho.items.dataLovers}
-                </p>
+                <p className="text-white/90 pt-2">{t.home.whySection.forWho.items.dataLovers}</p>
               </li>
               <li className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
@@ -435,9 +433,7 @@ const Home: React.FC = () => {
                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                   <Settings2 className="w-5 h-5 text-orange-400" />
                 </div>
-                <p className="text-white/90 pt-2">
-                  {t.home.whySection.forWho.items.controlFreaks}
-                </p>
+                <p className="text-white/90 pt-2">{t.home.whySection.forWho.items.controlFreaks}</p>
               </li>
             </ul>
             {/* <p className="text-white/80 text-sm italic border-t border-white/20 pt-4">
@@ -448,10 +444,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Coming Soon Section */}
-      <section
-        id="coming-soon"
-        className="mt-48 px-4 max-w-6xl mx-auto text-center"
-      >
+      <section id="coming-soon" className="mt-48 px-4 max-w-6xl mx-auto text-center">
         <div className="rounded-[2.5rem] p-10 md:p-16 bg-gradient-to-br from-[#2f4f3f] to-[#1a3025] shadow-2xl shadow-[#2f4f3f]/30 border border-white/10">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             {t.home.comingSoonSection.title}
@@ -459,16 +452,11 @@ const Home: React.FC = () => {
           <p className="text-white/80 text-lg md:text-xl mb-4 max-w-2xl mx-auto">
             {t.home.comingSoonSection.subtitle}
           </p>
-          <p className="text-white/60 text-base mb-8">
-            {t.home.comingSoonSection.description}
-          </p>
+          <p className="text-white/60 text-base mb-8">{t.home.comingSoonSection.description}</p>
 
           {/* Email Form */}
-          <form
-            onSubmit={handleWaitlistSubmit}
-            className="max-w-md mx-auto mb-10"
-          >
-            {status === "success" ? (
+          <form onSubmit={handleWaitlistSubmit} className="max-w-md mx-auto mb-10">
+            {status === 'success' ? (
               <div className="flex items-center justify-center gap-2 p-4 rounded-full bg-green-500/20 text-green-300 border border-green-500/30">
                 <Check size={20} />
                 <span>{t.home.comingSoonSection.form.success}</span>
@@ -481,7 +469,7 @@ const Home: React.FC = () => {
                     value={email}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                       setEmail(e.target.value);
-                      if (status === "error") setStatus("idle");
+                      if (status === 'error') setStatus('idle');
                     }}
                     placeholder={t.home.comingSoonSection.form.placeholder}
                     className="
@@ -493,7 +481,7 @@ const Home: React.FC = () => {
                   />
                   <button
                     type="submit"
-                    disabled={status === "loading"}
+                    disabled={status === 'loading'}
                     className="
                       flex items-center justify-center gap-2 px-8 py-4 rounded-full
                       bg-white text-[#2f4f3f] font-semibold
@@ -502,7 +490,7 @@ const Home: React.FC = () => {
                       disabled:opacity-50 disabled:cursor-not-allowed
                     "
                   >
-                    {status === "loading" ? (
+                    {status === 'loading' ? (
                       <span className="animate-pulse">...</span>
                     ) : (
                       <>
@@ -512,7 +500,7 @@ const Home: React.FC = () => {
                     )}
                   </button>
                 </div>
-                {status === "error" && (
+                {status === 'error' && (
                   <div className="flex items-center justify-center gap-2 mt-3 text-red-300 text-sm">
                     <AlertCircle size={16} />
                     <span>{errorMessage}</span>

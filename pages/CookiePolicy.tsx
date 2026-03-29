@@ -1,5 +1,5 @@
-import React from "react";
-import { useLocale } from "../hooks/useLocale";
+import React from 'react';
+import { useLocale } from '../hooks/useLocale';
 
 const CookiePolicy: React.FC = () => {
   const { t } = useLocale();
@@ -11,9 +11,7 @@ const CookiePolicy: React.FC = () => {
       </h1>
 
       <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300">
-        <p className="mb-6">
-This site uses technical cookies only.
-        </p>
+        <p className="mb-6">This site uses technical cookies only.</p>
       </div>
     </div>
   );

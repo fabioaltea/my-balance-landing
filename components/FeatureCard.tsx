@@ -9,7 +9,7 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, delay = 0 }) => {
   return (
-    <div 
+    <div
       className="
         p-10 rounded-[2.5rem] 
         bg-white/40 dark:bg-black/40 
