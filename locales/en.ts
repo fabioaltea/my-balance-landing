@@ -116,7 +116,7 @@ export const en = {
       openApp: 'Open the App',
       howItWorks: 'How it Works',
       badges: {
-        free: 'Free forever',
+        free: 'Free',
         openSource: 'Open source',
         privacyFirst: 'Privacy first',
       },

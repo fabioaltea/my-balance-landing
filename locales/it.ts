@@ -118,7 +118,7 @@ export const it: Translations = {
       openApp: "Apri l'App",
       howItWorks: 'Come funziona',
       badges: {
-        free: 'Gratis per sempre',
+        free: 'Gratis',
         openSource: 'Open source',
         privacyFirst: 'Privacy first',
       },
