@@ -62,14 +62,14 @@ export const it: Translations = {
       },
       origin: {
         title: 'Da dove nasce MyBalance',
-        intro: 'Tutto è partito da una frustrazione.\nEravamo stanchi di app finanziarie che:',
+        intro: 'Tutto è partito da una frustrazione. Eravamo stanchi di app finanziarie che:',
         items: {
           proprietary: 'Rinchiudono i tuoi dati in formati proprietari',
           superficial: 'Mostrano solo insight superficiali',
           subscriptions: 'Fanno pagare abbonamenti per funzioni basilari',
         },
         conclusion:
-          'Così abbiamo fatto una scelta radicale: i dati restano tuoi.\nCon MyBalance tutto vive nel tuo Google Sheet: sempre accessibile, esportabile, modificabile.\nSenza lock-in, senza sorprese.',
+          'Così abbiamo fatto una scelta radicale: i dati restano tuoi. Con MyBalance tutto vive nel tuo Google Sheet — sempre accessibile, esportabile, modificabile. Senza lock-in, senza sorprese.',
       },
     },
     trackSection: {
@@ -109,6 +109,38 @@ export const it: Translations = {
         intesa: 'Intesa San Paolo: +€25,00 (rimborso amico 1)',
         trade: 'Trade Republic: +€10,00 (rimborso amico 2)',
         net: 'Spesa netta: -€13,00 (la tua parte)',
+      },
+    },
+    ctaSection: {
+      tagline: 'Le tue finanze. Finalmente tue.',
+      description:
+        'Nessun abbonamento. Nessun database nascosto. Nessun lock-in. Solo tu, i tuoi dati e un foglio di calcolo che possiedi davvero.',
+      openApp: "Apri l'App",
+      howItWorks: 'Come funziona',
+      badges: {
+        free: 'Gratis per sempre',
+        openSource: 'Open source',
+        privacyFirst: 'Privacy first',
+      },
+    },
+    recurringSection: {
+      title: 'Non perdere mai un pagamento ricorrente',
+      description:
+        'Definisci le tue spese ricorrenti — affitto, abbonamenti, stipendio — e MyBalance tiene traccia di quelle registrate. I badge di stato mostrano immediatamente cosa è in ordine e cosa manca.',
+      features: {
+        schedule: 'Pianifica entrate e uscite con frequenza personalizzata',
+        status: 'Badge di stato visivi: confermato, in attesa o mancante',
+        notifications: "Ricevi una notifica quando un'uscita attesa non è stata registrata",
+      },
+    },
+    mapSection: {
+      title: 'Vedi dove spendi',
+      description:
+        'Associa opzionalmente una posizione a ogni movimento. La mappa integrata ti dà una panoramica visiva di dove va il tuo denaro — dal bar preferito alla spesa occasionale in viaggio.',
+      features: {
+        pinpoint: 'Aggiungi la posizione esatta a ogni movimento',
+        clusters: 'Vista raggruppata per individuare le zone di spesa',
+        optional: 'La posizione è sempre opzionale e non viene mai condivisa',
       },
     },
     comingSoonSection: {
@@ -341,6 +373,7 @@ export const it: Translations = {
           items: [
             'Hosting ed infrastruttura backend',
             'Visualizzazione di contenuti da piattaforme esterne',
+            'Analisi del comportamento degli utenti (Microsoft Clarity)',
           ],
         },
         processingDetails: {
@@ -369,6 +402,39 @@ export const it: Translations = {
               company: 'Azienda: Google LLC',
               location: 'Luogo del trattamento: Stati Uniti',
               data: 'Dati Personali trattati: Dati di utilizzo',
+            },
+          },
+          clarity: {
+            title: 'Analisi del comportamento degli utenti — Microsoft Clarity',
+            description:
+              "Questa Applicazione utilizza Microsoft Clarity, un servizio di analisi del comportamento degli utenti fornito da Microsoft Corporation. Clarity consente di comprendere come gli utenti interagiscono con la landing page tramite la registrazione di sessioni, la generazione di heatmap e l'analisi di movimenti del mouse, click e scorrimento della pagina.",
+            collected: 'I dati raccolti da Microsoft Clarity includono:',
+            collectedItems: [
+              'Movimenti del mouse, click e comportamento di scorrimento',
+              'Registrazioni delle sessioni di interazione con la pagina',
+              'Dati heatmap (pattern aggregati di click e scorrimento)',
+              'Dati di utilizzo (indirizzo IP, tipo di browser, dispositivo, sistema operativo)',
+              'Un identificatore utente univoco assegnato da Clarity',
+            ],
+            storage:
+              "I dati vengono archiviati da Microsoft nell'infrastruttura cloud Microsoft Azure. Per gli utenti nell'UE, il titolare del trattamento è Microsoft Ireland Operations Limited (MIOL); sono in vigore Clausole Contrattuali Standard (SCC) per qualsiasi trasferimento transfrontaliero di dati.",
+            retention:
+              'I dati raccolti vengono conservati da Microsoft per un massimo di 30 giorni.',
+            purpose:
+              "Lo scopo di questo trattamento è esclusivamente quello di analizzare come gli utenti interagiscono con questa Applicazione al fine di migliorarne l'usabilità e i contenuti. Nessun dato relativo a transazioni finanziarie o informazioni personali dell'account viene mai condiviso con Microsoft Clarity.",
+            legalBasis:
+              "La base giuridica di questo trattamento è il consenso dell'Utente (Art. 6(1)(a) GDPR). Per gli utenti nello Spazio Economico Europeo (SEE), nel Regno Unito e in Svizzera, è necessario il consenso esplicito prima che i cookie di Clarity vengano installati sul dispositivo.",
+            optOut:
+              'Gli utenti possono rinunciare alla telemetria di Clarity in qualsiasi momento visitando la pagina di opt-out della Digital Advertising Alliance e selezionando Microsoft, oppure abilitando il Global Privacy Control (GPC) nel proprio browser.',
+            microsoft: {
+              name: 'Microsoft Clarity',
+              company: 'Azienda: Microsoft Corporation / Microsoft Ireland Operations Limited (UE)',
+              location: 'Luogo del trattamento: Microsoft Azure (Stati Uniti / UE)',
+              data: 'Dati Personali trattati: Dati di utilizzo, identificatore utente univoco, registrazioni di sessione, dati di interazione',
+              privacy: 'Informativa sulla privacy Microsoft:',
+              privacyUrl: 'https://privacy.microsoft.com/en-us/privacystatement',
+              terms: 'Termini di utilizzo di Clarity:',
+              termsUrl: 'https://clarity.microsoft.com/terms',
             },
           },
         },

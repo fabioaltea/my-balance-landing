@@ -136,6 +136,57 @@ const PrivacyPolicy: React.FC = () => {
               {s.processingDetails.externalContent.googleFonts.data}
             </p>
           </div>
+
+          <h3 className="text-xl font-semibold text-[#2f4f3f] dark:text-white mt-6 mb-3">
+            {s.processingDetails.clarity.title}
+          </h3>
+          <p className="mb-4 whitespace-pre-line">{s.processingDetails.clarity.description}</p>
+          <p className="mb-2">{s.processingDetails.clarity.collected}</p>
+          <ul className="list-disc pl-6 mb-4 space-y-1">
+            {s.processingDetails.clarity.collectedItems.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+          <p className="mb-4 whitespace-pre-line">{s.processingDetails.clarity.storage}</p>
+          <p className="mb-4">{s.processingDetails.clarity.retention}</p>
+          <p className="mb-4 whitespace-pre-line">{s.processingDetails.clarity.purpose}</p>
+          <p className="mb-4 whitespace-pre-line">{s.processingDetails.clarity.legalBasis}</p>
+          <p className="mb-4 whitespace-pre-line">{s.processingDetails.clarity.optOut}</p>
+
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
+            <p className="font-semibold">{s.processingDetails.clarity.microsoft.name}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              {s.processingDetails.clarity.microsoft.company}
+            </p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              {s.processingDetails.clarity.microsoft.location}
+            </p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              {s.processingDetails.clarity.microsoft.data}
+            </p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+              {s.processingDetails.clarity.microsoft.privacy}{' '}
+              <a
+                href={s.processingDetails.clarity.microsoft.privacyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#2f4f3f] dark:text-emerald-400 underline"
+              >
+                {s.processingDetails.clarity.microsoft.privacyUrl}
+              </a>
+            </p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              {s.processingDetails.clarity.microsoft.terms}{' '}
+              <a
+                href={s.processingDetails.clarity.microsoft.termsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#2f4f3f] dark:text-emerald-400 underline"
+              >
+                {s.processingDetails.clarity.microsoft.termsUrl}
+              </a>
+            </p>
+          </div>
         </section>
 
         {/* Cookie Policy */}

@@ -60,14 +60,14 @@ export const en = {
       },
       origin: {
         title: 'Where MyBalance comes from',
-        intro: 'It all started from a frustration.\nWe were tired of finance apps that:',
+        intro: 'It all started from a frustration. We were tired of finance apps that:',
         items: {
           proprietary: 'Lock your data in proprietary formats',
           superficial: 'Show only superficial insights',
           subscriptions: 'Charge subscriptions for basic features',
         },
         conclusion:
-          'So we made a radical choice: your data stays yours.\nWith MyBalance everything lives in your Google Sheet: always accessible, exportable, editable.\nNo lock-in, no surprises.',
+          'So we made a radical choice: your data stays yours. With MyBalance everything lives in your Google Sheet — always accessible, exportable, editable. No lock-in, no surprises.',
       },
     },
     trackSection: {
@@ -107,6 +107,38 @@ export const en = {
         intesa: 'Intesa San Paolo: +€25,00 (friend 1 paid back)',
         trade: 'Trade Republic: +€10,00 (friend 2 paid back)',
         net: 'Net expense: -€13,00 (your share)',
+      },
+    },
+    ctaSection: {
+      tagline: 'Your finances. Finally yours.',
+      description:
+        'No subscriptions. No hidden databases. No vendor lock-in. Just you, your data, and a spreadsheet you actually own.',
+      openApp: 'Open the App',
+      howItWorks: 'How it Works',
+      badges: {
+        free: 'Free forever',
+        openSource: 'Open source',
+        privacyFirst: 'Privacy first',
+      },
+    },
+    recurringSection: {
+      title: 'Never Miss a Recurring Payment',
+      description:
+        "Define your recurring expenses — rent, subscriptions, salary — and MyBalance tracks whether each one has been recorded. Status badges instantly show what's on track and what's missing.",
+      features: {
+        schedule: 'Schedule income and expenses with custom frequency',
+        status: 'Visual status badges: confirmed, pending, or missing',
+        notifications: "Get notified when an expected entry hasn't been logged",
+      },
+    },
+    mapSection: {
+      title: 'See Where You Spend',
+      description:
+        'Optionally tag each transaction with a location. The built-in map gives you a visual overview of where your money goes — from your favourite coffee shop to that one-time travel expense.',
+      features: {
+        pinpoint: 'Pin transactions to exact locations',
+        clusters: 'Cluster view to spot spending hotspots',
+        optional: 'Location is always optional and never shared',
       },
     },
     comingSoonSection: {
@@ -338,6 +370,7 @@ export const en = {
           items: [
             'Hosting and backend infrastructure',
             'Display of content from external platforms',
+            'User behavior analytics (Microsoft Clarity)',
           ],
         },
         processingDetails: {
@@ -366,6 +399,38 @@ export const en = {
               company: 'Company: Google LLC',
               location: 'Processing location: United States',
               data: 'Personal Data processed: Usage Data',
+            },
+          },
+          clarity: {
+            title: 'User Behavior Analytics — Microsoft Clarity',
+            description:
+              'This Application uses Microsoft Clarity, a user behavior analytics service provided by Microsoft Corporation. Clarity helps us understand how users interact with the landing page by recording sessions, generating heatmaps, and analyzing mouse movements, clicks, and scrolling behavior.',
+            collected: 'Data collected by Microsoft Clarity includes:',
+            collectedItems: [
+              'Mouse movements, clicks, and scroll behavior',
+              'Session recordings of user interactions on the page',
+              'Heatmap data (aggregated click and scroll patterns)',
+              'Usage Data (IP address, browser type, device, operating system)',
+              'A unique user identifier assigned by Clarity',
+            ],
+            storage:
+              'Data is stored by Microsoft in the Microsoft Azure cloud infrastructure. Microsoft Ireland Operations Limited (MIOL) acts as the data controller for users in the EU, and Standard Contractual Clauses (SCCs) are in place for any cross-border data transfers.',
+            retention: 'Collected data is retained by Microsoft for up to 30 days.',
+            purpose:
+              'The purpose of this processing is exclusively to analyze how users interact with this Application in order to improve its usability and content. No financial transaction data or personal account information is ever shared with Microsoft Clarity.',
+            legalBasis:
+              "The legal basis for this processing is the User's consent (Art. 6(1)(a) GDPR). For users in the European Economic Area (EEA), United Kingdom, and Switzerland, explicit consent is required before Clarity cookies are placed on the device.",
+            optOut:
+              'Users can opt out of Clarity telemetry at any time by visiting the Digital Advertising Alliance opt-out page and selecting Microsoft, or by enabling Global Privacy Control (GPC) in their browser.',
+            microsoft: {
+              name: 'Microsoft Clarity',
+              company: 'Company: Microsoft Corporation / Microsoft Ireland Operations Limited (EU)',
+              location: 'Processing location: Microsoft Azure (United States / EU)',
+              data: 'Personal Data processed: Usage Data, unique user identifier, session recordings, interaction data',
+              privacy: 'Microsoft Privacy Statement:',
+              privacyUrl: 'https://privacy.microsoft.com/en-us/privacystatement',
+              terms: 'Clarity Terms of Use:',
+              termsUrl: 'https://clarity.microsoft.com/terms',
             },
           },
         },

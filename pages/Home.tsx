@@ -1,68 +1,33 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import Hero from '../components/Hero';
 import FeatureCard from '../components/FeatureCard';
 import {
   Layers,
   Shield,
   Zap,
-  Apple,
-  Smartphone,
-  Globe,
-  Send,
-  Check,
-  AlertCircle,
   BarChart3,
   Table2,
   Lock,
   Settings2,
   Lightbulb,
   X,
+  ArrowRight,
+  Infinity,
+  Github,
+  ShieldCheck,
 } from 'lucide-react';
 import appScreenshot from '../assets/IMG_2051.PNG';
 import chartsScreenshot1 from '../assets/IMG_2052.PNG';
 import chartsScreenshot2 from '../assets/IMG_2053.PNG';
 import movementScreenshot from '../assets/IMG_2054.PNG';
+import recurringScreenshot1 from '../assets/IMG_2185.PNG';
+import recurringScreenshot2 from '../assets/IMG_2197.PNG';
+import mapScreenshot from '../assets/IMG_2187.PNG';
 import { useLocale } from '../hooks/useLocale';
-
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 
 const Home: React.FC = () => {
   const { t } = useLocale();
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleWaitlistSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setStatus('error');
-      setErrorMessage(t.home.comingSoonSection.form.invalid);
-      return;
-    }
-
-    setStatus('loading');
-    try {
-      const response = await fetch(`${API_URL}/waitlist`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-
-      if (response.ok) {
-        setStatus('success');
-        setEmail('');
-      } else {
-        setStatus('error');
-        setErrorMessage(t.home.comingSoonSection.form.error);
-      }
-    } catch {
-      setStatus('error');
-      setErrorMessage(t.home.comingSoonSection.form.error);
-    }
-  };
   return (
     <div className="pb-20">
       <Hero />
@@ -365,9 +330,7 @@ const Home: React.FC = () => {
                   <Lightbulb className="w-5 h-5 text-[#2f4f3f]" />
                 </div>
               </div>
-              <p className="text-gray-600 leading-relaxed mb-4 whitespace-pre-line">
-                {t.home.whySection.origin.intro}
-              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">{t.home.whySection.origin.intro}</p>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
@@ -394,7 +357,7 @@ const Home: React.FC = () => {
                   </span>
                 </li>
               </ul>
-              <p className="text-gray-700 leading-relaxed font-medium whitespace-pre-line">
+              <p className="text-gray-700 leading-relaxed font-medium">
                 {t.home.whySection.origin.conclusion}
               </p>
             </div>
@@ -443,117 +406,211 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Coming Soon Section */}
-      <section id="coming-soon" className="mt-48 px-4 max-w-6xl mx-auto text-center">
-        <div className="rounded-[2.5rem] p-10 md:p-16 bg-gradient-to-br from-[#2f4f3f] to-[#1a3025] shadow-2xl shadow-[#2f4f3f]/30 border border-white/10">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            {t.home.comingSoonSection.title}
-          </h2>
-          <p className="text-white/80 text-lg md:text-xl mb-4 max-w-2xl mx-auto">
-            {t.home.comingSoonSection.subtitle}
-          </p>
-          <p className="text-white/60 text-base mb-8">{t.home.comingSoonSection.description}</p>
-
-          {/* Email Form */}
-          <form onSubmit={handleWaitlistSubmit} className="max-w-md mx-auto mb-10">
-            {status === 'success' ? (
-              <div className="flex items-center justify-center gap-2 p-4 rounded-full bg-green-500/20 text-green-300 border border-green-500/30">
-                <Check size={20} />
-                <span>{t.home.comingSoonSection.form.success}</span>
-              </div>
-            ) : (
-              <>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                      setEmail(e.target.value);
-                      if (status === 'error') setStatus('idle');
-                    }}
-                    placeholder={t.home.comingSoonSection.form.placeholder}
-                    className="
-                      flex-1 px-6 py-4 rounded-full
-                      bg-white/10 text-white placeholder-white/50
-                      border border-white/20 focus:border-white/40
-                      outline-none transition-all duration-300
-                    "
+      {/* Recurring Transactions Section */}
+      <section className="mt-48 px-4 overflow-hidden md:overflow-visible max-w-6xl mx-auto">
+        <div className="relative">
+          {/* Phone Mockups - Overflow Right */}
+          <div
+            className="
+            hidden md:flex absolute right-4 lg:right-6 top-1/2 -translate-y-1/2 z-10
+            gap-4
+          "
+          >
+            <div className="w-[200px] lg:w-[220px]">
+              <div className="relative rounded-[2.5rem] p-2 bg-gray-900 shadow-2xl shadow-black/40">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 bg-gray-900 rounded-b-xl z-10" />
+                <div className="rounded-[2rem] overflow-hidden bg-black">
+                  <img
+                    src={recurringScreenshot1}
+                    alt="Recurring Transactions"
+                    className="w-full h-auto"
                   />
-                  <button
-                    type="submit"
-                    disabled={status === 'loading'}
-                    className="
-                      flex items-center justify-center gap-2 px-8 py-4 rounded-full
-                      bg-white text-[#2f4f3f] font-semibold
-                      hover:bg-white/90 active:scale-95
-                      transition-all duration-300
-                      disabled:opacity-50 disabled:cursor-not-allowed
-                    "
-                  >
-                    {status === 'loading' ? (
-                      <span className="animate-pulse">...</span>
-                    ) : (
-                      <>
-                        <Send size={18} />
-                        {t.home.comingSoonSection.form.submit}
-                      </>
-                    )}
-                  </button>
                 </div>
-                {status === 'error' && (
-                  <div className="flex items-center justify-center gap-2 mt-3 text-red-300 text-sm">
-                    <AlertCircle size={16} />
-                    <span>{errorMessage}</span>
+              </div>
+            </div>
+            <div className="w-[200px] lg:w-[220px] mt-8">
+              <div className="relative rounded-[2.5rem] p-2 bg-gray-900 shadow-2xl shadow-black/40">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 bg-gray-900 rounded-b-xl z-10" />
+                <div className="rounded-[2rem] overflow-hidden bg-black">
+                  <img
+                    src={recurringScreenshot2}
+                    alt="Recurring Scheduling"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="absolute -inset-4 bg-[#2f4f3f]/20 rounded-[3rem] -z-10 blur-2xl" />
+          </div>
+
+          {/* Card */}
+          <div
+            className="
+            rounded-[2.5rem] p-8 md:p-12 md:pr-[460px] lg:pr-[500px]
+            bg-white
+            shadow-2xl shadow-black/10
+            border border-gray-200
+          "
+          >
+            {/* Mobile Phones - inside card */}
+            <div className="md:hidden flex gap-3 justify-center mb-8">
+              <div className="relative w-[140px]">
+                <div className="relative rounded-[2rem] p-1.5 bg-gray-900 shadow-xl">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-gray-900 rounded-b-lg z-10" />
+                  <div className="rounded-[1.5rem] overflow-hidden bg-black">
+                    <img
+                      src={recurringScreenshot1}
+                      alt="Recurring Transactions"
+                      className="w-full h-auto"
+                    />
                   </div>
-                )}
-              </>
-            )}
-          </form>
+                </div>
+              </div>
+              <div className="relative w-[140px] mt-4">
+                <div className="relative rounded-[2rem] p-1.5 bg-gray-900 shadow-xl">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-gray-900 rounded-b-lg z-10" />
+                  <div className="rounded-[1.5rem] overflow-hidden bg-black">
+                    <img
+                      src={recurringScreenshot2}
+                      alt="Recurring Scheduling"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <p className="text-white/50 text-xs mt-4">
-            {t.home.comingSoonSection.form.disclaimer}{' '}
-            <Link to="/privacy-policy" className="underline hover:text-white/70 transition-colors">
-              {t.home.comingSoonSection.form.privacyPolicy}
-            </Link>
-          </p>
+            {/* Text Content */}
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#2f4f3f]">
+                {t.home.recurringSection.title}
+              </h3>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                {t.home.recurringSection.description}
+              </p>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-center gap-3 justify-center md:justify-start">
+                  <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                  {t.home.recurringSection.features.schedule}
+                </li>
+                <li className="flex items-center gap-3 justify-center md:justify-start">
+                  <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                  {t.home.recurringSection.features.status}
+                </li>
+                <li className="flex items-center gap-3 justify-center md:justify-start">
+                  <span className="w-2 h-2 rounded-full bg-orange-500"></span>
+                  {t.home.recurringSection.features.notifications}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              disabled
-              className="
-                flex items-center justify-center gap-2 px-6 py-4 rounded-full w-full sm:w-auto
-                bg-white/10 text-white/50 font-semibold
-                border border-white/20 cursor-not-allowed
-              "
-            >
-              <Apple size={20} />
-              {t.home.comingSoonSection.buttons.ios}
-            </button>
+      {/* Map Section */}
+      <section className="mt-48 px-4 overflow-hidden md:overflow-visible max-w-6xl mx-auto">
+        <div className="relative">
+          {/* Phone Mockup - Overflow Left */}
+          <div
+            className="
+            hidden md:block absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 z-10
+            w-[240px] lg:w-[260px]
+          "
+          >
+            <div className="relative rounded-[2.5rem] p-2 bg-gray-900 shadow-2xl shadow-black/40">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-gray-900 rounded-b-xl z-10" />
+              <div className="rounded-[2rem] overflow-hidden bg-black">
+                <img src={mapScreenshot} alt="Transaction Map" className="w-full h-auto" />
+              </div>
+            </div>
+            <div className="absolute -inset-4 bg-[#2f4f3f]/30 rounded-[3rem] -z-10 blur-2xl" />
+          </div>
 
-            <button
-              disabled
-              className="
-                flex items-center justify-center gap-2 px-6 py-4 rounded-full w-full sm:w-auto
-                bg-white/10 text-white/50 font-semibold
-                border border-white/20 cursor-not-allowed
-              "
-            >
-              <Smartphone size={20} />
-              {t.home.comingSoonSection.buttons.android}
-            </button>
+          {/* Card */}
+          <div
+            className="
+            rounded-[2.5rem] p-8 md:p-12 md:pl-72 lg:pl-80
+            bg-gradient-to-tr from-[#2f4f3f] to-[#1a3025]
+            shadow-2xl shadow-[#2f4f3f]/30
+            border border-white/10
+          "
+          >
+            {/* Mobile Phone - inside card */}
+            <div className="md:hidden relative w-[220px] mx-auto mb-8">
+              <div className="relative rounded-[2.5rem] p-2 bg-gray-900 shadow-xl">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-gray-900 rounded-b-xl z-10" />
+                <div className="rounded-[2rem] overflow-hidden bg-black">
+                  <img src={mapScreenshot} alt="Transaction Map" className="w-full h-auto" />
+                </div>
+              </div>
+            </div>
 
-            <button
-              disabled
-              className="
-                flex items-center justify-center gap-2 px-6 py-4 rounded-full w-full sm:w-auto
-                bg-white/10 text-white/50 font-semibold
-                border border-white/20 cursor-not-allowed
-              "
-            >
-              <Globe size={20} />
-              {t.home.comingSoonSection.buttons.web}
-            </button>
-          </div> */}
+            {/* Text Content */}
+            <div className="text-center md:text-left text-white">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">{t.home.mapSection.title}</h3>
+              <p className="text-white/70 text-lg leading-relaxed mb-6">
+                {t.home.mapSection.description}
+              </p>
+              <ul className="space-y-3 text-white/80">
+                <li className="flex items-center gap-3 justify-center md:justify-start">
+                  <span className="w-2 h-2 rounded-full bg-green-400"></span>
+                  {t.home.mapSection.features.pinpoint}
+                </li>
+                <li className="flex items-center gap-3 justify-center md:justify-start">
+                  <span className="w-2 h-2 rounded-full bg-blue-400"></span>
+                  {t.home.mapSection.features.clusters}
+                </li>
+                <li className="flex items-center gap-3 justify-center md:justify-start">
+                  <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+                  {t.home.mapSection.features.optional}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="mt-48 mb-8 px-4 text-center">
+        <div className="w-16 h-px bg-gray-200 dark:bg-white/10 mx-auto mb-16" />
+
+        <h2 className="text-4xl md:text-6xl font-black text-[#2f4f3f] dark:text-white tracking-tight mb-6">
+          {t.home.ctaSection.tagline}
+        </h2>
+        <p className="text-gray-500 dark:text-gray-400 text-lg max-w-lg mx-auto mb-12">
+          {t.home.ctaSection.description}
+        </p>
+
+        <a
+          href="https://app.mybalance.tech"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            inline-flex items-center gap-2 px-10 py-4 rounded-full
+            bg-[#2f4f3f] text-white font-semibold text-lg
+            hover:bg-[#3d6652] hover:scale-105 active:scale-95
+            transition-all duration-300 shadow-xl shadow-[#2f4f3f]/20
+          "
+        >
+          {t.home.ctaSection.openApp}
+          <ArrowRight size={20} />
+        </a>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-gray-400 dark:text-gray-500 text-sm mt-12">
+          <span className="flex items-center gap-2">
+            <Infinity size={15} className="text-[#2f4f3f] dark:text-emerald-400" />
+            {t.home.ctaSection.badges.free}
+          </span>
+          <span className="hidden sm:block w-px h-3 bg-gray-200 dark:bg-white/10" />
+          <span className="flex items-center gap-2">
+            <Github size={15} className="text-[#2f4f3f] dark:text-emerald-400" />
+            {t.home.ctaSection.badges.openSource}
+          </span>
+          <span className="hidden sm:block w-px h-3 bg-gray-200 dark:bg-white/10" />
+          <span className="flex items-center gap-2">
+            <ShieldCheck size={15} className="text-[#2f4f3f] dark:text-emerald-400" />
+            {t.home.ctaSection.badges.privacyFirst}
+          </span>
         </div>
       </section>
     </div>

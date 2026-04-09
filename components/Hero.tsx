@@ -71,10 +71,10 @@ const Hero: React.FC = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-          <button
-            onClick={() => {
-              document.getElementById('coming-soon')?.scrollIntoView({ behavior: 'smooth' });
-            }}
+          <a
+            href="https://app.mybalance.tech"
+            target="_blank"
+            rel="noopener noreferrer"
             className="
             flex items-center gap-2 px-8 py-4 rounded-full
             bg-[#2f4f3f] text-white font-semibold text-lg
@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
           >
             {t.hero.getStarted}
             <ArrowRight size={20} />
-          </button>
+          </a>
 
           <button
             onClick={() => navigate('/how-it-works')}
