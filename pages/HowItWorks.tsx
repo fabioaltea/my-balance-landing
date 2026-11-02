@@ -65,18 +65,12 @@ const HowItWorks: React.FC = () => {
   ];
 
   const colorClasses: Record<string, { bg: string; text: string }> = {
-    blue: { bg: 'bg-blue-100 dark:bg-blue-900/30', text: 'text-blue-600 dark:text-blue-400' },
-    purple: {
-      bg: 'bg-purple-100 dark:bg-purple-900/30',
-      text: 'text-purple-600 dark:text-purple-400',
-    },
-    green: { bg: 'bg-green-100 dark:bg-green-900/30', text: 'text-green-600 dark:text-green-400' },
-    orange: {
-      bg: 'bg-orange-100 dark:bg-orange-900/30',
-      text: 'text-orange-600 dark:text-orange-400',
-    },
-    pink: { bg: 'bg-pink-100 dark:bg-pink-900/30', text: 'text-pink-600 dark:text-pink-400' },
-    teal: { bg: 'bg-teal-100 dark:bg-teal-900/30', text: 'text-teal-600 dark:text-teal-400' },
+    blue: { bg: 'bg-[#5B8DB8]/15', text: 'text-[#5B8DB8]' },
+    purple: { bg: 'bg-[#8E7CB3]/15', text: 'text-[#8E7CB3]' },
+    green: { bg: 'bg-income/15', text: 'text-income' },
+    orange: { bg: 'bg-expense/15', text: 'text-expense' },
+    pink: { bg: 'bg-[#C9A24A]/15', text: 'text-[#C9A24A]' },
+    teal: { bg: 'bg-control', text: 'text-accent' },
   };
 
   useLayoutEffect(() => {
@@ -155,10 +149,10 @@ const HowItWorks: React.FC = () => {
       ref={containerRef}
       className="pt-20 md:pt-32 pb-32 md:pb-20 px-4 max-w-full md:max-w-4xl mx-auto min-h-screen"
     >
-      <h1 className="text-3xl md:text-5xl font-bold text-[#2f4f3f] dark:text-white mb-4 md:mb-6 text-center">
+      <h1 className="text-3xl md:text-5xl font-bold tracking-[-0.04em] text-accent mb-4 md:mb-6 text-center">
         {t.howItWorks.title}
       </h1>
-      <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 text-center mb-8 md:mb-12 max-w-2xl mx-auto">
+      <p className="text-base md:text-lg text-muted text-center mb-8 md:mb-12 max-w-2xl mx-auto">
         {t.howItWorks.subtitle}
       </p>
 
@@ -168,14 +162,14 @@ const HowItWorks: React.FC = () => {
             <div
               className="
               step-card
-              p-6 md:p-8 rounded-[2.5rem] bg-white/30 dark:bg-black/30 backdrop-blur-lg border border-white/40 dark:border-white/5
+              p-6 md:p-8 rounded-panel bg-surface border border-line/10 shadow-panel
               flex flex-col md:flex-row items-center gap-4 md:gap-6
             "
             >
               <div
                 className={`
                 step-icon
-                w-14 h-14 md:w-16 md:h-16 shrink-0 rounded-full flex items-center justify-center
+                w-14 h-14 md:w-16 md:h-16 shrink-0 rounded-2xl flex items-center justify-center
                 ${colorClasses[step.color].bg} ${colorClasses[step.color].text}
               `}
               >
@@ -189,17 +183,15 @@ const HowItWorks: React.FC = () => {
                     {t.howItWorks.stepLabel} {step.number}
                   </span>
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold text-[#2f4f3f] dark:text-white mb-1 md:mb-2">
+                <h3 className="text-xl md:text-2xl font-bold tracking-tight text-accent mb-1 md:mb-2">
                   {step.title}
                 </h3>
-                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300">
-                  {step.description}
-                </p>
+                <p className="text-sm md:text-base text-muted">{step.description}</p>
               </div>
             </div>
 
             {index < steps.length - 1 && (
-              <div className="step-arrow flex justify-center text-[#2f4f3f]/30 dark:text-white/20">
+              <div className="step-arrow flex justify-center text-accent/30">
                 <ArrowDown size={32} />
               </div>
             )}
@@ -208,9 +200,9 @@ const HowItWorks: React.FC = () => {
       </div>
 
       {/* Data Ownership Highlight */}
-      <div className="final-card mt-8 md:mt-16 p-6 md:p-8 rounded-[2.5rem] bg-gradient-to-br from-[#2f4f3f] to-[#1a3025] shadow-2xl shadow-[#2f4f3f]/30 border border-white/10">
+      <div className="final-card mt-8 md:mt-16 p-6 md:p-8 rounded-panel bg-deep border border-white/10 shadow-panel">
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
-          <div className="w-14 h-14 md:w-16 md:h-16 shrink-0 rounded-full bg-white/10 flex items-center justify-center">
+          <div className="w-14 h-14 md:w-16 md:h-16 shrink-0 rounded-2xl bg-white/10 flex items-center justify-center">
             <Sheet className="text-white" size={24} />
           </div>
           <div className="text-center md:text-left text-white">

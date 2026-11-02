@@ -13,10 +13,7 @@ export const it: Translations = {
     tagline: 'Le Tue Finanze, I Tuoi Dati',
     description:
       'Un moderno tracker finanziario personale che memorizza tutti i tuoi dati nel tuo Google Sheet. Privacy-first, open source e meravigliosamente semplice.',
-    downloadAndroid: 'Scarica per Android',
-    downloadIOS: 'Scarica per iOS',
-    comingSoon: 'Prossimamente',
-    viewSource: 'Visualizza Codice Sorgente',
+    platforms: 'Disponibile su iOS, Android e Web',
     getStarted: 'Inizia',
   },
 
@@ -143,24 +140,28 @@ export const it: Translations = {
         optional: 'La posizione è sempre opzionale e non viene mai condivisa',
       },
     },
-    comingSoonSection: {
-      title: 'Prossimamente',
-      subtitle:
-        'Stiamo dando gli ultimi ritocchi a MyBalance. Sii tra i primi a prendere il controllo delle tue finanze.',
-      description: "L'app è quasi pronta. Iscriviti per essere avvisato al lancio.",
-      buttons: {
-        ios: 'Scarica per iOS',
-        android: 'Scarica per Android',
-        web: 'Accedi Online',
-      },
-      form: {
-        placeholder: 'Inserisci la tua email',
-        submit: 'Avvisami',
-        success: 'Sei nella lista! Ti avviseremo al lancio.',
-        error: 'Qualcosa è andato storto. Riprova.',
-        invalid: 'Inserisci un indirizzo email valido.',
-        disclaimer: 'Cliccando Avvisami accetti la',
-        privacyPolicy: 'Privacy Policy',
+    upcomingSection: {
+      eyebrow: 'Prossimamente',
+      title: 'Cosa arriva',
+      description:
+        'Stiamo lavorando a nuovi modi per raggiungere i tuoi dati. Stessa regola: restano nel tuo Sheet.',
+      badge: 'Presto',
+      items: {
+        ai: {
+          title: 'Assistenti AI (MCP)',
+          description:
+            'Collega ChatGPT, Claude e altri agenti AI per interrogare i tuoi conti, cercare transazioni, ottenere riepiloghi mensili e aggiungere movimenti — con un accesso autorizzato da te.',
+        },
+        whatsapp: {
+          title: 'Registra da WhatsApp',
+          description:
+            'Invia un messaggio per registrare un movimento. Nessuna app da aprire: finisce nel tuo Google Sheet come ogni altra voce.',
+        },
+        statements: {
+          title: 'Import estratti conto',
+          description:
+            'Importa estratti in PDF o immagine, letti localmente sul dispositivo. Confermi il conto e controlli ogni movimento prima che venga salvato.',
+        },
       },
     },
   },
@@ -217,12 +218,13 @@ export const it: Translations = {
       'Costruito con tecnologie moderne per velocità, sicurezza e completa proprietà dei dati.',
     sections: {
       mobileApp: {
-        title: 'App Mobile',
+        title: 'App (iOS, Android e Web)',
         items: {
-          reactNative: "React Native + Expo: iOS e Android nativi da un'unica codebase.",
+          reactNative: "React Native + Expo 58: iOS, Android e Web da un'unica codebase.",
+          router: 'Expo Router: Navigazione file-based condivisa tra le piattaforme.',
+          query: 'TanStack React Query: Cache e sincronizzazione intelligenti, anche offline.',
+          maps: 'Mapbox + ML Kit: Mappe native e scansione scontrini (OCR) sul dispositivo.',
           typescript: 'TypeScript: Codice type-safe per affidabilità.',
-          reanimated: 'Reanimated: Animazioni e gesture fluide a 60fps.',
-          context: 'Context + Hooks: Gestione dello stato leggera.',
         },
       },
       backend: {
@@ -279,8 +281,8 @@ export const it: Translations = {
     },
     architecture: {
       title: 'Come Funziona',
-      mobileApp: 'App Mobile',
-      reactNative: 'React Native',
+      mobileApp: 'App',
+      reactNative: 'Expo · iOS, Android, Web',
       backendApi: 'Backend API',
       expressVercel: 'Express + Vercel',
       yourData: 'I Tuoi Dati',

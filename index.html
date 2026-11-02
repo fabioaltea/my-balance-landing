@@ -3,12 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta 
-    name="theme-color" 
-    content="transparent"
-    >
-    
-    
+    <meta name="theme-color" id="theme-color" content="#F2F5F3" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="translucent" />
     <meta name="color-scheme" content="light dark" />
@@ -17,73 +12,96 @@
     <link rel="icon" type="image/png" href="/assets/logo.png" />
     <link rel="apple-touch-icon" href="/assets/logo.png" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
-      rel="stylesheet"
-    />
     <script>
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
+            // Same system font stack used by the MyBalance app (Expo web)
             fontFamily: {
-              sans: ["Inter", "sans-serif"],
+              sans: [
+                "system-ui",
+                "-apple-system",
+                "BlinkMacSystemFont",
+                "Segoe UI",
+                "Roboto",
+                "Helvetica",
+                "Arial",
+                "sans-serif",
+              ],
             },
+            // Semantic tokens mirror the Expo app palette; values live in the CSS variables below
             colors: {
-              primary: "#2f4f3f",
-              glass: {
-                light: "rgba(255, 255, 255, 0.4)",
-                dark: "rgba(20, 20, 20, 0.6)",
-              },
+              canvas: "rgb(var(--canvas) / <alpha-value>)",
+              surface: "rgb(var(--surface) / <alpha-value>)",
+              control: "rgb(var(--control) / <alpha-value>)",
+              line: "rgb(var(--line) / <alpha-value>)",
+              ink: "rgb(var(--ink) / <alpha-value>)",
+              muted: "rgb(var(--muted) / <alpha-value>)",
+              accent: "rgb(var(--accent) / <alpha-value>)",
+              "on-accent": "rgb(var(--on-accent) / <alpha-value>)",
+              deep: "#244437",
+              income: "#298965",
+              expense: "#D07862",
+            },
+            borderRadius: {
+              panel: "26px",
+              ctl: "12px",
+            },
+            boxShadow: {
+              panel: "0 12px 30px rgba(17, 31, 24, 0.07)",
+              float: "0 24px 70px rgba(6, 20, 11, 0.27)",
+              control: "0 4px 12px rgba(36, 68, 55, 0.18)",
             },
           },
         },
       };
     </script>
     <style>
+      :root {
+        --canvas: 242 245 243;
+        --surface: 255 255 255;
+        --control: 238 242 239;
+        --line: 36 68 55;
+        --ink: 17 24 28;
+        --muted: 88 102 95;
+        --accent: 36 68 55;
+        --on-accent: 255 255 255;
+      }
+      :root.dark {
+        --canvas: 23 26 24;
+        --surface: 29 33 31;
+        --control: 42 48 45;
+        --line: 255 255 255;
+        --ink: 236 237 238;
+        --muted: 179 188 183;
+        --accent: 214 232 222;
+        --on-accent: 23 26 24;
+      }
       html {
-        background-color: transparent;
+        background-color: rgb(var(--canvas));
         min-height: 100%;
         min-height: 100vh;
       }
-      html.dark {
-        background-color: transparent;
-      }
       body {
         margin: 0;
-        font-family: "Inter", sans-serif;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
         overflow-x: hidden;
-        background-color: transparent;
+        background-color: rgb(var(--canvas));
+        color: rgb(var(--ink));
         min-height: 100%;
         min-height: 100dvh;
         padding-bottom: env(safe-area-inset-bottom, 0);
-      }
-      html.dark body {
-        background-color: transparent;
-      }
-      /* Ensure background extends behind Safari bottom bar */
-      body::after {
-        content: '';
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: env(safe-area-inset-bottom, 34px);
-        background-color: transparent;
-        z-index: -1;
-        pointer-events: none;
-      }
-      html.dark body::after {
-        background-color: transparent;
       }
       #root {
         min-height: 100%;
         min-height: 100dvh;
         background-color: inherit;
       }
-      /* Custom Scrollbar for a premium feel */
+      ::selection {
+        background: rgb(var(--accent) / 0.2);
+      }
       ::-webkit-scrollbar {
         width: 8px;
       }
@@ -91,11 +109,11 @@
         background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-        background: rgba(47, 79, 63, 0.5);
+        background: rgba(128, 128, 128, 0.25);
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: rgba(47, 79, 63, 0.8);
+        background: rgba(128, 128, 128, 0.4);
       }
     </style>
     <script type="importmap">
@@ -116,7 +134,7 @@
       const updateThemeColor = () => {
         const isDark = document.documentElement.classList.contains('dark');
         const themeColor = document.getElementById('theme-color');
-        if (themeColor) themeColor.content = isDark ? '#0a0a0a' : '#f9fafb';
+        if (themeColor) themeColor.content = isDark ? '#171A18' : '#F2F5F3';
       };
       // Observe class changes on html element
       const observer = new MutationObserver(updateThemeColor);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { HashRouter, Routes, Route, Navigate, useLocation, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import LiquidBackground from './components/LiquidBackground';
+import Background from './components/Background';
 import Home from './pages/Home';
 import HowItWorks from './pages/HowItWorks';
 import TechStack from './pages/TechStack';
@@ -43,10 +43,8 @@ const AppContent: React.FC = () => {
   return (
     <HashRouter>
       <ScrollToTop />
-      <div
-        className={`min-h-screen overflow-x-hidden transition-colors duration-500 ${isDark ? 'text-white' : 'text-gray-900'}`}
-      >
-        <LiquidBackground />
+      <div className="min-h-screen overflow-x-hidden text-ink transition-colors duration-300">
+        <Background />
         <Navbar isDark={isDark} toggleTheme={toggleTheme} />
 
         <main className="container mx-auto pb-24 md:pb-0">
@@ -61,20 +59,20 @@ const AppContent: React.FC = () => {
           </Routes>
         </main>
 
-        <footer className="py-8 mb-20 md:mb-0 text-center text-sm text-gray-500 dark:text-gray-400">
+        <footer className="py-8 mb-20 md:mb-0 text-center text-sm text-muted">
           <p className="mb-3">
             &copy; {new Date().getFullYear()} {t.footer.copyright}
           </p>
           <div className="flex justify-center gap-4">
-            <Link to="/privacy-policy" className="hover:text-[#2f4f3f] transition-colors">
+            <Link to="/privacy-policy" className="hover:text-accent transition-colors">
               {t.footer.privacyPolicy}
             </Link>
             <span>·</span>
-            <Link to="/cookie-policy" className="hover:text-[#2f4f3f] transition-colors">
+            <Link to="/cookie-policy" className="hover:text-accent transition-colors">
               {t.footer.cookiePolicy}
             </Link>
             <span>·</span>
-            <Link to="/terms-of-service" className="hover:text-[#2f4f3f] transition-colors">
+            <Link to="/terms-of-service" className="hover:text-accent transition-colors">
               {t.footer.termsOfService}
             </Link>
           </div>

@@ -28,9 +28,9 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
           className="
           pointer-events-auto
           flex items-center gap-1 p-1.5
-          backdrop-blur-xl bg-white/30 dark:bg-black/30 
-          border border-white/40 dark:border-white/10 
-          rounded-full shadow-lg shadow-black/5
+          bg-surface/90 backdrop-blur-md
+          border border-line/10
+          rounded-2xl shadow-panel
           transition-all duration-300
         "
         >
@@ -39,11 +39,11 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
               key={item.path}
               to={item.path}
               className={({ isActive }) => `
-                px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap
+                px-5 py-2.5 rounded-ctl text-sm font-semibold transition-all duration-200 whitespace-nowrap
                 ${
                   isActive
-                    ? 'bg-white/80 dark:bg-white/10 text-[#2f4f3f] dark:text-white shadow-sm'
-                    : 'text-gray-600 dark:text-gray-400 hover:text-[#2f4f3f] dark:hover:text-white hover:bg-white/40 dark:hover:bg-white/5'
+                    ? 'bg-accent text-on-accent'
+                    : 'text-muted hover:text-accent hover:bg-control'
                 }
               `}
             >
@@ -60,9 +60,9 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
             className="
             pointer-events-auto
             flex items-center justify-around gap-1 p-1.5 w-full
-            backdrop-blur-xl bg-white/40 dark:bg-black/40 
-            border border-white/40 dark:border-white/10 
-            rounded-full shadow-xl shadow-black/10
+            bg-surface/90 backdrop-blur-md
+            border border-line/10
+            rounded-2xl shadow-panel
             transition-all duration-300
             will-change-transform
           "
@@ -72,12 +72,8 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) => `
-                  flex-1 text-center px-4 py-3 rounded-full text-xs font-semibold transition-all duration-300 whitespace-nowrap
-                  ${
-                    isActive
-                      ? 'bg-white/80 dark:bg-white/10 text-[#2f4f3f] dark:text-white shadow-sm'
-                      : 'text-gray-600 dark:text-gray-400 active:bg-white/40 dark:active:bg-white/5'
-                  }
+                  flex-1 text-center px-4 py-3 rounded-ctl text-xs font-semibold transition-all duration-200 whitespace-nowrap
+                  ${isActive ? 'bg-accent text-on-accent' : 'text-muted active:bg-control'}
                 `}
               >
                 {item.label}
@@ -94,12 +90,12 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
           <button
             onClick={() => setShowLangMenu(!showLangMenu)}
             className="
-              p-3 rounded-full 
-              backdrop-blur-xl bg-white/30 dark:bg-black/30 
-              border border-white/40 dark:border-white/10 
-              shadow-lg shadow-black/5
-              text-[#2f4f3f] dark:text-gray-200
-              hover:scale-110 active:scale-95 transition-all duration-300
+              p-3 rounded-xl
+              bg-surface/90 backdrop-blur-md
+              border border-line/10
+              shadow-panel
+              text-accent
+              hover:bg-control active:scale-95 transition-all duration-200
               flex items-center justify-center
             "
             aria-label="Change Language"
@@ -112,7 +108,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
               {/* Backdrop to close menu */}
               <div className="fixed inset-0 z-40" onClick={() => setShowLangMenu(false)} />
               {/* Menu */}
-              <div className="absolute right-0 top-14 z-50 min-w-[140px] rounded-2xl backdrop-blur-xl bg-white/40 dark:bg-black/40 border border-white/40 dark:border-white/10 shadow-xl overflow-hidden">
+              <div className="absolute right-0 top-14 z-50 min-w-[140px] rounded-2xl bg-surface border border-line/10 shadow-float overflow-hidden">
                 {(Object.keys(localeNames) as Locale[]).map((lang) => (
                   <button
                     key={lang}
@@ -122,11 +118,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
                     }}
                     className={`
                       w-full px-4 py-3 text-left text-sm font-semibold transition-all duration-200
-                      ${
-                        locale === lang
-                          ? 'bg-white/80 dark:bg-white/10 text-[#2f4f3f] dark:text-white'
-                          : 'text-gray-600 dark:text-gray-400 hover:bg-white/40 dark:hover:bg-white/5'
-                      }
+                      ${locale === lang ? 'bg-control text-accent' : 'text-muted hover:bg-control'}
                     `}
                   >
                     {localeNames[lang]}
@@ -142,12 +134,12 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
           onClick={toggleTheme}
           className="
             pointer-events-auto
-            p-3 rounded-full 
-            backdrop-blur-xl bg-white/30 dark:bg-black/30 
-            border border-white/40 dark:border-white/10 
-            shadow-lg shadow-black/5
-            text-[#2f4f3f] dark:text-gray-200
-            hover:scale-110 active:scale-95 transition-all duration-300
+            p-3 rounded-xl
+            bg-surface/90 backdrop-blur-md
+            border border-line/10
+            shadow-panel
+            text-accent
+            hover:bg-control active:scale-95 transition-all duration-200
             flex items-center justify-center
           "
           aria-label="Toggle Theme"

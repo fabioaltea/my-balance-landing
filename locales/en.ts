@@ -11,10 +11,7 @@ export const en = {
     tagline: 'Your Finance, Your Data',
     description:
       'A modern personal finance tracker that stores all your data in your own Google Sheet. Privacy-first, open source, and beautifully simple.',
-    downloadAndroid: 'Download for Android',
-    downloadIOS: 'Download for iOS',
-    comingSoon: 'Coming Soon',
-    viewSource: 'View Source Code',
+    platforms: 'Available on iOS, Android and Web',
     getStarted: 'Get Started',
   },
 
@@ -141,24 +138,28 @@ export const en = {
         optional: 'Location is always optional and never shared',
       },
     },
-    comingSoonSection: {
-      title: 'Coming Soon',
-      subtitle:
-        "We're putting the finishing touches on MyBalance. Be among the first to take control of your finances.",
-      description: 'The app is almost ready. Sign up to be notified when we launch.',
-      buttons: {
-        ios: 'Download for iOS',
-        android: 'Download for Android',
-        web: 'Access Online',
-      },
-      form: {
-        placeholder: 'Enter your email',
-        submit: 'Notify Me',
-        success: "You're on the list! We'll notify you when we launch.",
-        error: 'Something went wrong. Please try again.',
-        invalid: 'Please enter a valid email address.',
-        disclaimer: 'By clicking Notify Me you accept the',
-        privacyPolicy: 'Privacy Policy',
+    upcomingSection: {
+      eyebrow: 'Coming soon',
+      title: "What's next",
+      description:
+        "We're working on new ways to reach your data. Same rule: it stays in your Sheet.",
+      badge: 'Soon',
+      items: {
+        ai: {
+          title: 'AI assistants (MCP)',
+          description:
+            'Connect ChatGPT, Claude and other AI agents to ask about your accounts, search transactions, get monthly summaries and add movements — with your own authorized access.',
+        },
+        whatsapp: {
+          title: 'WhatsApp logging',
+          description:
+            'Send a message to record a movement. No app to open: it lands in your Google Sheet like any other entry.',
+        },
+        statements: {
+          title: 'Bank statement import',
+          description:
+            'Import PDF or image statements, read locally on your device. You confirm the account and review every movement before anything is saved.',
+        },
       },
     },
   },
@@ -214,12 +215,13 @@ export const en = {
     subtitle: 'Built with modern technologies for speed, security, and complete data ownership.',
     sections: {
       mobileApp: {
-        title: 'Mobile App',
+        title: 'App (iOS, Android & Web)',
         items: {
-          reactNative: 'React Native + Expo: Native iOS and Android from a single codebase.',
+          reactNative: 'React Native + Expo 58: iOS, Android and Web from a single codebase.',
+          router: 'Expo Router: File-based navigation shared across platforms.',
+          query: 'TanStack React Query: Smart caching and sync, with offline support.',
+          maps: 'Mapbox + ML Kit: Native maps and on-device receipt scanning (OCR).',
           typescript: 'TypeScript: Type-safe code for reliability.',
-          reanimated: 'Reanimated: Smooth 60fps animations and gestures.',
-          context: 'Context + Hooks: Lightweight state management.',
         },
       },
       backend: {
@@ -276,8 +278,8 @@ export const en = {
     },
     architecture: {
       title: 'How It All Connects',
-      mobileApp: 'Mobile App',
-      reactNative: 'React Native',
+      mobileApp: 'App',
+      reactNative: 'Expo · iOS, Android, Web',
       backendApi: 'Backend API',
       expressVercel: 'Express + Vercel',
       yourData: 'Your Data',
